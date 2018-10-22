@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  <title>Face Detection using OpenCV</title>
+
+  <meta name="author" content="Applied Articles" />
+
+  
+  <meta name="description" content="A gentle introduction">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Applied Articles - A Data Science Blog" href="/feed.xml" />
+
+  
+
+  
+
+  
+    
+      
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+  
+
+  
+
+  
+
+    <!-- Facebook OpenGraph tags -->
+  
+
+  
+  <meta property="og:title" content="Face Detection using OpenCV" />
+  
+
+   
+  <meta property="og:description" content="A gentle introduction">
+  
+
+
+  <meta property="og:type" content="website" />
+
+  
+  <meta property="og:url" content="http://localhost:4000/projects/computer-vision/face-detection-using-opencv/" />
+  <link rel="canonical" href="http://localhost:4000/projects/computer-vision/face-detection-using-opencv/" />
+  
+
+  
+  <meta property="og:image" content="http://localhost:4000/img/logo.jpeg" />
+  
+
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+  <meta name="twitter:title" content="Face Detection using OpenCV" />
+  
+
+  
+  <meta name="twitter:description" content="A gentle introduction">
+  
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/img/logo.jpeg" />
+  
+
+  
+
+</head>
+
+
+  <body>
+
+    
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+        <a class="navbar-brand" href="http://localhost:4000">Applied Articles</a>
+      
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Blog</a>
+            <div class="navlinks-children">
+              
+                
+                  
+
+
+
+
+
+
+<a href="/tags">Tags</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/projects">Projects</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/aboutme">About Me</a>
+
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href="http://localhost:4000 ">
+	      <img class="avatar-img" src="/img/logo.jpeg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Face Detection using OpenCV</h1>
+		  
+		    
+			<h2 class="post-subheading">A gentle introduction</h2>
+			
+		  
+		  
+		  
+		  	
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      
+
+      <article role="main" class="blog-post">
+        <p><strong><em>Face detection</em></strong> is a computer technology being used in a variety of applications that identifies human faces in digital images.
+Face detection can be regarded as a specific case of object detection.<br />
+Face-detection algorithms focus on the detection of frontal human faces. It is analogous to image detection in which the image of a person is matched bit by bit. Image matches with the image stores in database. Any facial feature changes in the database will invalidate the matching process.</p>
+
+<p><img src="/img/2018/projects/com-vis/face.png" alt="Plot" class="img-responsive" /></p>
+
+<h3 id="application">Application</h3>
+<ul>
+  <li>Facial recognition</li>
+  <li>Facial motion capture</li>
+  <li>Biometrics</li>
+  <li>Photography</li>
+</ul>
+
+<h3 id="opencv-classifier">OpenCV Classifier</h3>
+<p>A computer program that decides whether an image is a positive image (face image) or negative image (non-face image) is called a classifier. A classifier is trained on hundreds of thousands of face and non-face images to learn how to classify a new image correctly. OpenCV provides us with two pre-trained and ready to be used for face detection classifiers:</p>
+
+<ul>
+  <li><strong><em>Haar Classifier</em></strong></li>
+  <li><strong><em>LBP Classifier</em></strong></li>
+</ul>
+
+<p>Both of these classifiers process images in gray scales, basically because we don’t need color information to decide if a picture has a face or not. As these are pre-trained in OpenCV, their learned knowledge files also come bundled with OpenCV opencv/data/.</p>
+
+<p>To run a classifier, we need to load the knowledge files first, as if it had no knowledge.
+Each file starts with the name of the classifier it belongs to. For example, a Haar cascade classifier starts off as <em>haarcascade_frontalface_alt.xml</em>.</p>
+
+<p>These are the two types of classifiers we will be using to analyze image.</p>
+
+<h3 id="haar-cascade-classifier">HAAR Cascade Classifier</h3>
+
+<p>The Haar Classifier is a machine learning based approach, an algorithm proposed by Paul Viola and improved by Rainer Lienhart; which are trained from many positive images (with faces) and negatives images (without faces). It starts by extracting Haar features from each image as shown by the windows below:</p>
+
+<p><img src="/img/2018/projects/com-vis/haarfeatures.png" alt="Plot" class="img-responsive" /></p>
+
+<p>Each window is placed on the picture to calculate a single feature. This feature is a single value obtained by subtracting the sum of pixels under the white part of the window from the sum of the pixels under the black part of the window.<br />
+Now, all possible sizes of each window are placed on all possible locations of each image to calculate plenty of features.</p>
+
+<h3 id="lbp-cascade-classifier">LBP Cascade Classifier</h3>
+
+<p>As any other classifier, the Local Binary Patterns, or LBP in short, also needs to be trained on hundreds of images. Local binary patterns (LBP) is a type of visual descriptor used for classification in computer vision.<br />
+It has since been found to be a powerful feature for texture classification; it has further been determined that when LBP is combined with the Histogram of oriented gradients (HOG) descriptor, it improves the detection performance considerably on some datasets.<br />
+So, LBP features are extracted to form a feature vector that classifies a face from a non-face.</p>
+
+<p><strong><em>Concept</em></strong></p>
+<ul>
+  <li>Each training image is divided into some blocks as shown in the picture below.</li>
+  <li>For each block, LBP looks at 9 pixels (3×3 window) at a time, and with a particular interest in the pixel located in the center of the window.</li>
+  <li>Then, it compares the central pixel value with every neighbor’s pixel value under the 3×3 window. For each neighbor pixel that is greater than or equal to the center pixel, it sets its value to 1, and for the others, it sets them to 0.</li>
+  <li>After that, it reads the updated pixel values (which can be either 0 or 1) in a clockwise order and forms a binary number. Next, it converts the binary number into a decimal number, and that decimal number is the new value of the center pixel. We do this for every pixel in a block.</li>
+  <li>Then, it converts each block values into a histogram, so now we have gotten one histogram for each block in an image.</li>
+  <li>Finally, it concatenates these block histograms to form a one feature vector for one image, which contains all the features we are interested. So, this is how we extract LBP features from a picture.</li>
+</ul>
+
+<h3 id="implementation">Implementation</h3>
+
+<p>Importing required libraries.<br />
+Importing time library for speed comparisons of both classifiers.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">time</span> 
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</code></pre></div></div>
+<p>When we load an image using OpenCV, it loads it into BGR color space by default. To show the colored image using matplotlib we have to convert it to RGB space. So, we need to define a function which does this operation.</p>
+
+<p><em>cv2.cvtColor</em> is an OpenCV function to convert images to different color spaces. It takes as input an image to transform, and a color space code (like cv2.COLOR_BGR2RGB) and returns the processed image.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">convertToRGB</span><span class="p">(</span><span class="n">img</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Next, we define a function <em>detect_faces()</em> which takes 3 arguments.</p>
+
+<ul>
+  <li><strong><em>f_cascade</em></strong>: It defines the type of Cascade Classifier.</li>
+  <li><strong><em>colored_img</em></strong>: It is the input image that we want to test.</li>
+  <li><strong><em>scaleFactor</em></strong>: This function compensates a false perception in size that occurs when one face appears to be bigger than the other simply because it is closer to the camera.
+<strong><em>cv2.cvtColor</em></strong> is an OpenCV function to convert the test image to gray image as opencv face detector expects gray images.</li>
+</ul>
+
+<p><em>detectMultiScale(image, scaleFactor, minNeighbors)</em>: This is a general function to detect objects, in this case, it’ll detect faces since we called in the face cascade. If it finds a face, it returns a list of positions of said face in the form “<em>Rect(x,y,w,h)</em>.”, if not, then returns “None”.</p>
+
+<ul>
+  <li><strong><em>image</em></strong>: Converted input image is the grayscale image.</li>
+  <li><strong><em>minNeighbors</em></strong>: This is a detection algorithm that uses a moving window to detect objects, it does so by defining how many objects are found near the current one before it can declare the face found.</li>
+</ul>
+
+<p>Once we have the list of recognized faces, we can loop over them and draw a rectangle on the copy of the image and return the modified copy of the picture.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">detect_faces</span><span class="p">(</span><span class="n">f_cascade</span><span class="p">,</span> <span class="n">colored_img</span><span class="p">,</span> <span class="n">scaleFactor</span> <span class="o">=</span> <span class="mf">1.1</span><span class="p">):</span>
+ <span class="c">#just making a copy of image passed, so that passed image is not changed </span>
+ <span class="n">img_copy</span> <span class="o">=</span> <span class="n">colored_img</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>          
+ 
+ <span class="c">#convert the test image to gray image as opencv face detector expects gray images</span>
+ <span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img_copy</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>          
+ 
+ <span class="c">#let's detect multiscale (some images may be closer to camera than others) images</span>
+ <span class="n">faces</span> <span class="o">=</span> <span class="n">f_cascade</span><span class="o">.</span><span class="n">detectMultiScale</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span> <span class="n">scaleFactor</span><span class="o">=</span><span class="n">scaleFactor</span><span class="p">,</span> <span class="n">minNeighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">);</span>          
+ 
+ <span class="c">#go over list of faces and draw them as rectangles on original colored img</span>
+ <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">:</span>
+      <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img_copy</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">w</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>              
+ 
+ <span class="k">return</span> <span class="n">img_copy</span>
+</code></pre></div></div>
+
+<h3 id="opencv-haar-cascade-classifier">OpenCV HAAR Cascade Classifier</h3>
+
+<p>Here we will deal with detection. OpenCV already contains many pre-trained classifiers for face, eyes, smiles, etc. Those XML files are stored in the opencv/data/haarcascades/ folder.<br />
+We need to load the required XML classifiers and then pass this as an argument in <em>detect_faces()</em> function in order to test the new image.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#load cascade classifier training file for haarcascade </span>
+<span class="n">haar_face_cascade</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CascadeClassifier</span><span class="p">(</span><span class="s">'data/haarcascade_frontalface_alt.xml'</span><span class="p">)</span>
+</code></pre></div></div>
+<h3 id="test-1">Test 1</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#load another image </span>
+<span class="n">test2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">'data/a.jpg'</span><span class="p">)</span>  
+ 
+<span class="c">#call our function to detect faces </span>
+<span class="n">faces_detected_img</span> <span class="o">=</span> <span class="n">detect_faces</span><span class="p">(</span><span class="n">haar_face_cascade</span><span class="p">,</span> <span class="n">test2</span><span class="p">)</span>  
+ 
+<span class="c">#convert image to RGB and show image </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">convertToRGB</span><span class="p">(</span><span class="n">faces_detected_img</span><span class="p">))</span>
+</code></pre></div></div>
+<p><img src="/img/2018/projects/com-vis/t1.png" alt="Plot" class="img-responsive" /></p>
+
+<h3 id="test-2---dealing-with-false-positive">Test 2 - Dealing with False Positive</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#load another image </span>
+<span class="n">test2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">'data/b.jpg'</span><span class="p">)</span>  
+ 
+<span class="c">#call our function to detect faces </span>
+<span class="n">faces_detected_img</span> <span class="o">=</span> <span class="n">detect_faces</span><span class="p">(</span><span class="n">haar_face_cascade</span><span class="p">,</span> <span class="n">test2</span><span class="p">)</span>  
+ 
+<span class="c">#convert image to RGB and show image </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">convertToRGB</span><span class="p">(</span><span class="n">faces_detected_img</span><span class="p">))</span>
+</code></pre></div></div>
+<p><img src="/img/2018/projects/com-vis/t2.png" alt="Plot" class="img-responsive" /></p>
+
+<p>We got one false positives.</p>
+
+<p>A simple tweak to the scale factor compensates for this so can move that parameter around. For example, scaleFactor=1.2 improved the results.</p>
+
+<h3 id="test-2-with-scalefactor12">Test 2 with scaleFactor=1.2</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#load another image</span>
+<span class="n">test2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">'data/b.jpg'</span><span class="p">)</span>  
+ 
+<span class="c">#call our function to detect faces</span>
+<span class="n">faces_detected_img</span> <span class="o">=</span> <span class="n">detect_faces</span><span class="p">(</span><span class="n">haar_face_cascade</span><span class="p">,</span> <span class="n">test2</span><span class="p">,</span> <span class="n">scaleFactor</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>  
+ 
+<span class="c">#convert image to RGB and show image</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">convertToRGB</span><span class="p">(</span><span class="n">faces_detected_img</span><span class="p">))</span>
+</code></pre></div></div>
+<p><img src="/img/2018/projects/com-vis/t3.png" alt="Plot" class="img-responsive" /></p>
+
+<p>12 people detected</p>
+
+<h3 id="opencv-lbp-cascade-classifier">OpenCV LBP Cascade Classifier</h3>
+
+<p>XML training files for LBP cascade are stored in the opencv/data/lbpcascades/ folder. We just need to pass this LBP classifier to the same function and then test new data.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#load cascade classifier training file for lbpcascade </span>
+<span class="n">lbp_face_cascade</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CascadeClassifier</span><span class="p">(</span><span class="s">'data/lbpcascade_frontalface.xml'</span><span class="p">)</span>  
+ 
+<span class="c">#load test image </span>
+<span class="n">test2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">'data/a.jpg'</span><span class="p">)</span> 
+ 
+<span class="c">#call our function to detect faces </span>
+<span class="n">faces_detected_img</span> <span class="o">=</span> <span class="n">detect_faces</span><span class="p">(</span><span class="n">lbp_face_cascade</span><span class="p">,</span> <span class="n">test2</span><span class="p">)</span>  
+ 
+<span class="c">#convert image to RGB and show image </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">convertToRGB</span><span class="p">(</span><span class="n">faces_detected_img</span><span class="p">))</span>
+</code></pre></div></div>
+<p><img src="/img/2018/projects/com-vis/t1.png" alt="Plot" class="img-responsive" /></p>
+
+<h3 id="comparative-analysis-of-haar-vs-lbp">Comparative analysis of HAAR vs. LBP</h3>
+
+<p>Let’s compare both Haar and LBP on two test images to see accuracy and time delay of each.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#load cascade classifier training file for haarcascade </span>
+<span class="n">haar_face_cascade</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CascadeClassifier</span><span class="p">(</span><span class="s">'data/haarcascade_frontalface_alt.xml'</span><span class="p">)</span> 
+<span class="c">#load cascade classifier training file for lbpcascade </span>
+<span class="n">lbp_face_cascade</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CascadeClassifier</span><span class="p">(</span><span class="s">'data/lbpcascade_frontalface.xml'</span><span class="p">)</span>  
+
+<span class="c">#load test image2 </span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">'data/c.jpg'</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#------------HAAR----------- </span>
+<span class="c">#note time before detection </span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>  
+ 
+<span class="c">#call our function to detect faces </span>
+<span class="n">haar_detected_img</span> <span class="o">=</span> <span class="n">detect_faces</span><span class="p">(</span><span class="n">haar_face_cascade</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span>  
+ 
+<span class="c">#note time after detection </span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> 
+<span class="c">#calculate time difference </span>
+<span class="n">dt1</span> <span class="o">=</span> <span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span> 
+<span class="c">#print the time difference</span>
+
+<span class="c">#------------LBP----------- </span>
+<span class="c">#note time before detection </span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> 
+ 
+<span class="c">#call our function to detect faces </span>
+<span class="n">lbp_detected_img</span> <span class="o">=</span> <span class="n">detect_faces</span><span class="p">(</span><span class="n">lbp_face_cascade</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span>  
+ 
+<span class="c">#note time after detection </span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> 
+<span class="c">#calculate time difference </span>
+<span class="n">dt2</span> <span class="o">=</span> <span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span> 
+<span class="c">#print the time difference</span>
+
+<span class="c">#create a figure of 2 plots (one for Haar and one for LBP) </span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  
+ 
+<span class="c">#show Haar image </span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'Haar Detection time: '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">dt1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s">' secs'</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">convertToRGB</span><span class="p">(</span><span class="n">haar_detected_img</span><span class="p">))</span>  
+ 
+<span class="c">#show LBP image </span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'LBP Detection time: '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">dt2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="s">' secs'</span><span class="p">)</span> 
+<span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">convertToRGB</span><span class="p">(</span><span class="n">lbp_detected_img</span><span class="p">))</span>  
+</code></pre></div></div>
+<p><img src="/img/2018/projects/com-vis/t4.png" alt="Plot" class="img-responsive" /></p>
+
+<h3 id="observation">Observation</h3>
+
+<ul>
+  <li><strong><em>Accuracy</em></strong>: <em>HAAR</em> detected more faces and than <em>LBP</em>.</li>
+  <li><strong><em>Speed</em></strong>: <em>LBP</em> was significantly faster than <em>HAAR</em>.</li>
+</ul>
+
+      </article>
+
+      
+
+      
+
+      <ul class="pager blog-pager">
+        
+        
+      </ul>
+
+      
+        <div class="disqus-comments">
+          <div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'appliedarticles';
+        /* ensure that pages with query string get the same discussion */
+            var url_parts = window.location.href.split("?");
+            var disqus_url = url_parts[0];
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        </div>
+          
+      
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links"><li><a href="/feed.xml" title="RSS"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">RSS</span>
+              </a>
+            </li><li><a href="https://www.facebook.com/hshekhar0" title="Facebook"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Facebook</span>
+              </a>
+            </li><li><a href="https://github.com/appliedarticles" title="GitHub"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">GitHub</span>
+              </a>
+            </li><li><a href="https://linkedin.com/in/hshekhar20" title="LinkedIn"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+            </li></ul>
+      <p class="copyright text-muted">
+      Applied Articles
+      &nbsp;&bull;&nbsp;
+      2018
+
+      
+
+      
+      </p>
+          <!-- Please don't remove this, keep my open source work credited :) -->
+    <p class="theme-by text-muted">
+      Theme by
+      <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+    </p> 
+    <p class="theme-by text-muted">Code with <span style="font-size:120%;color:red;">&hearts;</span> in India</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+
+  
+  </body>
+</html>

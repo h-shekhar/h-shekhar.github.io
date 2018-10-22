@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  <title>How to use ConvNets in different ways</title>
+
+  <meta name="author" content="Applied Articles" />
+
+  
+  <meta name="description" content="CNN">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Applied Articles - A Data Science Blog" href="/feed.xml" />
+
+  
+
+  
+
+  
+    
+      
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+  
+
+  
+
+  
+
+    <!-- Facebook OpenGraph tags -->
+  
+
+  
+  <meta property="og:title" content="How to use ConvNets in different ways" />
+  
+
+   
+  <meta property="og:description" content="CNN">
+  
+
+
+  <meta property="og:type" content="website" />
+
+  
+  <meta property="og:url" content="http://localhost:4000/2018-10-04-ways-to-use-convnet/" />
+  <link rel="canonical" href="http://localhost:4000/2018-10-04-ways-to-use-convnet/" />
+  
+
+  
+  <meta property="og:image" content="http://localhost:4000/img/logo.jpeg" />
+  
+
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+  <meta name="twitter:title" content="How to use ConvNets in different ways" />
+  
+
+  
+  <meta name="twitter:description" content="CNN">
+  
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/img/logo.jpeg" />
+  
+
+  
+
+</head>
+
+
+  <body>
+
+    
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+        <a class="navbar-brand" href="http://localhost:4000">Applied Articles</a>
+      
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Blog</a>
+            <div class="navlinks-children">
+              
+                
+                  
+
+
+
+
+
+
+<a href="/tags">Tags</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/projects">Projects</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/aboutme">About Me</a>
+
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href="http://localhost:4000 ">
+	      <img class="avatar-img" src="/img/logo.jpeg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>How to use ConvNets in different ways</h1>
+		  
+		    
+			<h2 class="post-subheading">CNN</h2>
+			
+		  
+		  
+		  
+		  	
+		  		<span class="post-meta">Posted on October 4, 2018</span>
+		  	
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      
+
+      <article role="main" class="blog-post">
+        <p>There are several ways we can use Convolutional Neural Network (CNN or ConvNets for short) for building a deep learning model. Some are computationally cheaper while some require deeper understanding of the underlying architecture. Each has their own advantages. Let’s dive in to find out.</p>
+
+<ol>
+  <li>Building ConvNets from Scratch.</li>
+  <li>Use pre-trained ConvNets.</li>
+  <li>Use pre-trained ConvNets as fixed Feature Extractor.</li>
+  <li>Fine-tuning the Pre-trained ConvNets.</li>
+</ol>
+
+<p><img src="/img/2018/10/cnn.jpg" alt="Plot" class="img-responsive" /></p>
+
+<h3 id="1-building-convnets-from-scratch">1. Building ConvNets from Scratch</h3>
+<p>To build a network from scratch, the architect is required to define the number of layers and filters, along with other tunable parameters. Training an accurate model from scratch also requires massive amounts of data, on the order of millions of samples, which can take an immense amount of time.</p>
+
+<p>Creating a network from scratch means you determine the network configuration. This approach gives you the most control over the network and can produce impressive results, but it requires an understanding of the structure of a neural network and the many options for layer types and configuration.</p>
+
+<p>While results can sometimes exceed transfer learning (see below), this method tends to require more images for training, as the new network needs many examples of the object to understand the variation of features. Training times are often longer, and there are so many combinations of network layers that it can be overwhelming to configure a network from scratch.</p>
+
+<p><strong><em>General Steps:</em></strong></p>
+
+<ol>
+  <li>Build your own ConvNets from scratch.</li>
+  <li>Use dataset to train the model.</li>
+  <li>Classify the object.</li>
+</ol>
+
+<p>(When to use: New dataset is large and very different from the original dataset)</p>
+
+<h3 id="2-use-pre-trained-convnets---transfer-learning">2. Use pre-trained ConvNets - Transfer Learning</h3>
+<p>A common alternative to training a ConvNets from scratch is to use a pretrained model to automatically extract features from a new data set. This method, called transfer learning, is a convenient way to apply deep learning without a huge dataset and long computation and training time.</p>
+
+<p>Transfer learning uses knowledge from one type of problem to solve similar problems. You start with a pretrained network and use it to learn a new task. One advantage of transfer learning is that the pretrained network has already learned a rich set of features. These features can be applied to a wide range of other similar tasks. For example, you can take a network trained on millions of images and retrain it for new object classification using only hundreds of images.</p>
+
+<p><strong><em>General Steps:</em></strong></p>
+
+<ol>
+  <li>Take pre-trained ConvNets(VGGNet, AlexNet, etc).</li>
+  <li>Use similar kind of dataset to perform prediction as used by pre-trained ConvNets.</li>
+  <li>Use ConvNets directly(without modifying any parameter used in model) to classify the object.</li>
+</ol>
+
+<h3 id="3-use-pre-trained-convnets-as-fixed-feature-extractor---transfer-learning">3. Use pre-trained ConvNets as fixed Feature Extractor - Transfer Learning</h3>
+<p>Feature Extraction deals with extracting learned image features from a pretrained convolutional neural network, and use those features to train an image classifier. Feature extraction is the easiest and fastest way use the representational power of pretrained deep networks. For example, you can train a support vector machine, Logistic Regression and many more on the extracted features. Because feature extraction only requires a single pass through the data, it is a good starting point if you do not have a GPU to accelerate network training.</p>
+
+<p><strong><em>General Steps:</em></strong></p>
+
+<ol>
+  <li>Take a ConvNets(like VGG16) pretrained on dataset(like ImageNet).</li>
+  <li>Remove the last fully-connected layer (this layer’s outputs are the 1000 class scores for a different task like ImageNet).</li>
+  <li>Then treat the rest of the ConvNets as a fixed feature extractor for the new dataset.</li>
+  <li>Use the extracted feature to train a linear classifier(e.g. Linear SVM or Softmax classifier) for the new dataset.</li>
+  <li>Classify the object.</li>
+</ol>
+
+<h3 id="4-fine-tuning-the-pre-trained-convnets---transfer-learning">4. Fine-tuning the Pre-trained ConvNets - Transfer Learning</h3>
+<p>Fine-tuning means taking weights of a trained neural network and use it as initialization for a new model being trained on data from the same domain. Fine-tuning a pretrained network with transfer learning is typically much faster and easier than training from scratch. It requires the least amount of data and computational resources. It is used to speed up the training and generally to overcome small dataset size.</p>
+
+<p>There are various strategies, such as training the whole initialized network or “freezing” some of the pre-trained weights (usually whole layers).</p>
+
+<p><strong><em>General Steps:</em></strong></p>
+
+<ol>
+  <li>Not only replace and retrain the classifier on top of the ConvNets on the new dataset, but to also fine-tune the weights of the pretrained network by continuing the backpropagation.</li>
+  <li>Fine-tune all the layers of the ConvNets, or keep some of the earlier layers fixed (due to overfitting concerns) and only fine-tune some higher-level portion of the network.</li>
+</ol>
+
+<p>(When to use: New dataset is large and similar to the original dataset).</p>
+
+<h3 id="how-companies-use-convnets">How Companies Use ConvNets</h3>
+<p><img src="/img/2018/10/data.jpeg" alt="Plot" class="img-responsive" /></p>
+
+<blockquote>
+  <p>“Data is a precious thing and will last longer than the systems themselves.” – <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a>, inventor of the <a href="https://en.wikipedia.org/wiki/World_Wide_Web">World Wide Web</a>.</p>
+</blockquote>
+
+<p><strong><em>DATA</em></strong>. The companies that have lots of this magic four letter word are the ones that have an inherent advantage over the rest of the competition. The more training data that you can give to a network, the more training iterations you can make, the more weight updates you can make, and the better tuned to the network is when it goes to production. Facebook and Instagram can use all the photos of the billion users it currently has, Google can use search data, and Amazon can use data from the millions of products that are bought every day. And now you know the magic behind how they use it.</p>
+
+
+      </article>
+
+      
+        <div class="blog-tags">
+          Tags:
+          
+          
+            <a href="/tags#deep learning">deep learning</a>
+          
+            <a href="/tags#python">python</a>
+          
+            <a href="/tags#cnn">cnn</a>
+          
+          
+        </div>
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+  <!--- Share on Twitter -->
+    <a href="https://twitter.com/intent/tweet?text=How+to+use+ConvNets+in+different+ways+http://localhost:4000/2018-10-04-ways-to-use-convnet/"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+  <!--- Share on Facebook -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2018-10-04-ways-to-use-convnet/"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+
+  
+  <!--- Share on LinkedIn -->
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2018-10-04-ways-to-use-convnet/"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="/2018-09-09-statistics-for-machine-learning/" data-toggle="tooltip" data-placement="top" title="Statistics & Visualization for Machine Learning">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
+
+      
+        <div class="disqus-comments">
+          <div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'appliedarticles';
+        /* ensure that pages with query string get the same discussion */
+            var url_parts = window.location.href.split("?");
+            var disqus_url = url_parts[0];
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        </div>
+          
+      
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links"><li><a href="/feed.xml" title="RSS"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">RSS</span>
+              </a>
+            </li><li><a href="https://www.facebook.com/hshekhar0" title="Facebook"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Facebook</span>
+              </a>
+            </li><li><a href="https://github.com/appliedarticles" title="GitHub"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">GitHub</span>
+              </a>
+            </li><li><a href="https://linkedin.com/in/hshekhar20" title="LinkedIn"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+            </li></ul>
+      <p class="copyright text-muted">
+      Applied Articles
+      &nbsp;&bull;&nbsp;
+      2018
+
+      
+
+      
+      </p>
+          <!-- Please don't remove this, keep my open source work credited :) -->
+    <p class="theme-by text-muted">
+      Theme by
+      <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+    </p> 
+    <p class="theme-by text-muted">Code with <span style="font-size:120%;color:red;">&hearts;</span> in India</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+
+  
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Applied Articles</title>
+    <description>A Data Science Blog</description>
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>How to use ConvNets in different ways</title>
+        <description>
+          CNN - 
+          There are several ways we can use Convolutional Neural Network (CNN or ConvNets for short) for building a deep learning model. Some are computationally cheaper while some require deeper understanding of the underlying architecture. Each has their own advantages. Let’s dive in to find out. Building ConvNets from Scratch. Use...
+        </description>
+        <pubDate>Thu, 04 Oct 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/2018-10-04-ways-to-use-convnet/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018-10-04-ways-to-use-convnet/</guid>
+      </item>
+    
+      <item>
+        <title>Statistics &amp; Visualization for Machine Learning</title>
+        <description>
+          Hands-on guide to statistics &amp; visualization techniques - 
+          Table of Content Statistics for Machine Learning 1. Gaussian Distribution and Descriptive Stats 2. Correlation Between Variables 3. Statistical Hypothesis Tests 4. Estimation Statistics 5. Nonparametric Statistics How to Calculate the 5-Number Summary in Python Data Visualization Methods in Python 1. Line Plot 2. Bar Chart 3. Histogram Plot 4....
+        </description>
+        <pubDate>Sun, 09 Sep 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/2018-09-09-statistics-for-machine-learning/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018-09-09-statistics-for-machine-learning/</guid>
+      </item>
+    
+      <item>
+        <title>Pima Indians onset of Diabetes dataset</title>
+        <description>
+          Exploratory Data Analysis - 
+          Context: This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The objective of the dataset is to diagnostically predict whether or not a patient has diabetes, based on certain diagnostic measurements included in the dataset. Several constraints were placed on the selection of these...
+        </description>
+        <pubDate>Tue, 04 Sep 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/2018-09-04-eda-diabetes-dataset/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018-09-04-eda-diabetes-dataset/</guid>
+      </item>
+    
+      <item>
+        <title>Dimentionality Reduction using MNIST data set</title>
+        <description>
+          PCA, t-SNE - 
+          What is Dimensionality Reduction? In machine learning, dimensionality reduction is the process of converting any data which is present in a higher dimension to somewhat lower dimension by preserving the underlying information concisely. We often apply a bunch of dimensionality reduction technique to better visualize our data. But that is...
+        </description>
+        <pubDate>Fri, 24 Aug 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/2018-08-24-dimentionality-reduction-mnist/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018-08-24-dimentionality-reduction-mnist/</guid>
+      </item>
+    
+      <item>
+        <title>How to practice the interview questions</title>
+        <description>
+          Seven Step Approach - 
+          When it comes to practicing interview questions, quality matters more than quantity. There are literally thousands of sample interview questions online for companies like Google, Microsoft, and Amazon. Don’t try to memorize the answers. It’s impossible and won’t help you anyway. Take your time-solving problems, and try the following seven-step...
+        </description>
+        <pubDate>Fri, 27 Jul 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/2018-07-27-how-to-practice-interview-questions/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018-07-27-how-to-practice-interview-questions/</guid>
+      </item>
+    
+      <item>
+        <title>The Differences</title>
+        <description>
+          Top tech company - 
+          Cultural differences between companies can often be traced back to the company’s roots. Amazon, many would argue, is more of a retail company than a software company. It faced extremely hard times during the dot-com crash and continues to battle profit margins that are levels of magnitude lower than those...
+        </description>
+        <pubDate>Tue, 10 Jul 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/2018-07-10-tech-company-differences/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018-07-10-tech-company-differences/</guid>
+      </item>
+    
+      <item>
+        <title>How to crack the tech interview</title>
+        <description>
+          Seven Step Approach - 
+          Interviews are supposed to be difficult. The norm is that you won’t know how to solve a question as soon as you hear it. You will struggle through it, get a bit of help from the interviewer, and arrive at a better solution than what you started with. When you...
+        </description>
+        <pubDate>Thu, 28 Jun 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/2018-06-28-how-to-crack-tech-interview/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018-06-28-how-to-crack-tech-interview/</guid>
+      </item>
+    
+      <item>
+        <title>How tech interview differ</title>
+        <description>
+          Microsoft, Google, Facebook, Amazon, and Apple - 
+          For the most part, the top tech companies are far more similar than different. There really aren’t “Google interview questions” or “Microsoft interview questions.” Each interviewer decides on his or her own questions, and almost any question asked at one company would fit in just as well at any of...
+        </description>
+        <pubDate>Thu, 24 May 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/2018-05-24-how-tech-interview-differ/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018-05-24-how-tech-interview-differ/</guid>
+      </item>
+    
+      <item>
+        <title>Is a Start-Up right for You?</title>
+        <description>
+          Let's find out! - 
+          The Good Many say that for true start-up people, this high-risk career is just in their nature. They get that entrepreneurial itch, either in college or at some big company, and know they need to be somewhere much, much smaller. And their new career path offers a ton of value...
+        </description>
+        <pubDate>Thu, 26 Apr 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/2018-04-26-is-start-up-right-for-you/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018-04-26-is-start-up-right-for-you/</guid>
+      </item>
+    
+  </channel>
+</rss>

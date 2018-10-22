@@ -1,0 +1,119 @@
+<p>Interviews are supposed to be difficult. The norm is that you won’t know how to solve a question as soon as you hear it. You will struggle through it, get a bit of help from the interviewer, and arrive at a better solution than what you started with.</p>
+
+<p>When you get a hard question, don’t panic. Just start talking aloud about how you would solve it.</p>
+
+<p>The following seven-step approach works well for many problems:</p>
+
+<ol>
+  <li>Understand the question. If there’s anything you didn’t understand, clarify it here. Pay special attention to any specific details provided in the question, such as that the input is sorted. You need all those details.</li>
+  <li>Draw an example. Solving questions in your head is very different; get up to the whiteboard and draw an example. It should be a good example, too. The example should be reasonably large and not a special case.</li>
+  <li>Design a brute force algorithm. If there’s a brute force/naïve approach, or even a solution that only partially works, explain it. It’s a starting point, and ensures that your interviewer knows that you’ve gotten at least that far.</li>
+  <li>Optimize the brute force. Not always, but very often, there’s a path from the brute force to the optimal solution.</li>
+  <li>Understand the code. Once you have an optimal algorithm, take a moment to really understand your algorithm. It’s well worth it to not dive into code yet.</li>
+  <li>Implement the code. If you’re comfortable with your process, go ahead and implement it. Don’t be afraid to go back to your example, though, if you start to get confused.</li>
+  <li>Flawless whiteboard coding is rare. If you find mistakes, that’s okay. Analyze why you made the mistake and try to fix it.
+ 
+And, remember: you’re not done until the interviewer says that you’re done! This goes for both the algorithm part and the code part. When you come up with an algorithm, start thinking about the problems accompanying it. When you write code, start trying to find bugs. The vast majority of candidates make mistakes.</li>
+</ol>
+
+<h3 id="step-1-understand-the-question">Step 1: Understand the Question</h3>
+
+<p>Technical problems are more ambiguous than they might appear, so make sure to ask questions to resolve anything that might be unclear. You may eventually wind up with a very different—or much easier—problem than you had initially thought. In fact, some interviewers will especially test to see if you ask good questions. A question like “Design an algorithm to sort a list” might turn into “Sort a sequence of values between 1 and 10 that are stored in a linked list.” This is a very different problem.</p>
+
+<p>Additionally, it’s important to make sure that you really remember all those details that the interviewer mentioned. If the interviewer mentioned that the data is stored, then your optimal algorithm probably depends on that. Or, if the data set has all unique values, this is probably necessary information.</p>
+
+<p>If you think you might have forgotten some details, you can always ask your interviewer to repeat the problem.</p>
+
+<h3 id="step-2-draw-an-example">Step 2: Draw an example</h3>
+
+<p>For some reason, most candidates have this instinct to stay in their chairs to solve the problem. Don’t. Get up and go to the whiteboard! It’s very difficult to solve a problem without an example.</p>
+
+<p>Make sure your example is sufficiently interesting. This means that it should be not too small, but not overwhelmingly difficult, and also not a special case.</p>
+
+<p>It’s surprisingly common for candidates to use a special case example. The problem with special cases is that they can make you see patterns that don’t exist, or make you fail to see patterns that do. It’s hard to distinguish between “works for this problem” and “works in general.”</p>
+
+<h3 id="step-3-design-a-brute-force-algorithm">Step 3: Design a Brute Force Algorithm</h3>
+
+<p>As soon as you hear an interview question, try to get a solution out there, even if it’s imperfect. You can work with a brute force algorithm to optimize it.</p>
+
+<p>When designing your algorithm, don’t forget to think about:</p>
+
+<ul>
+  <li>What are the time and space complexities?</li>
+  <li>What happen if there is a lot of data?</li>
+  <li>Does your design cause other issues for other operations like insert/search/delete?</li>
+  <li>If there are other issues, did you make the right trade-offs?</li>
+  <li>If the interviewer gave you specific data, have you leveraged that information? There’s probably a reason that you’re given it.</li>
+  <li>Even a bad solution is better than no solution. State your bad solution and then state the issues with it.</li>
+</ul>
+
+<h3 id="step-4-optimize-the-brute-force">Step 4: Optimize the Brute Force</h3>
+
+<p>Once you have a solution out there, focus on making it better.</p>
+
+<p>If you have a brute force algorithm, it often works well to run through the algorithm—by hand with your example, not by writing code—and look for areas to optimize. Specifically, look for the bottlenecks, unnecessary work, and duplicated work areas:</p>
+
+<ul>
+  <li>If there one part of the code that’s taking a long time? For example, if your algorithm has first step that’s O(N log N) and a second step that’s O(N), there’s little sense in optimizing the second step. The first step will always be a bottleneck. A bottleneck could also be a particularly slow part of the code that is called repeatedly. That might be a good place on which to focus your optimizations.</li>
+  <li>Unnecessary work. Is there anything you’re doing that isn’t really necessary? For example, perhaps you’re searching for an element on both sides of the tree, when you should really have some clue why it would be on one side.</li>
+  <li>Duplicated work. Is there anything you’re doing over and over again? For example, if you’re continuously searching for the same elements, this could constitute duplicated work and you could optimize it with a hash table.</li>
+</ul>
+
+<p>Of course, if a really novel and unrelated approach comes to you, don’t be afraid to start from scratch.</p>
+
+<h3 id="step-5-understand-the-code">Step 5: Understand the Code</h3>
+
+<p>Interviewees spend too little time on this step and, unfortunately, it typically results in their writing sloppy and incorrect code.</p>
+
+<p>It’s a bad habit instilled in coders from using a computer. If the code is short enough, you’re used to just typing it out and running it, then fixing up what doesn’t work. This is okay on a computer: typing a short problem is pretty fast.</p>
+
+<p>On a whiteboard, though, it’s very slow to write code and even slower to test it. This is why it’s important to make sure you really, really know what you’re doing.</p>
+
+<p>Run through your algorithm meticulously before coding. For example, imagine you’re trying to merge two sorted arrays into a new sorted array. Many candidates start coding when they understand the basic gist: two pointers move them through the array, copy the elements in order.</p>
+
+<p>This probably isn’t sufficient. You should instead understand it deeply. You need to understand what the variables are, when they update, and why. You should have logic like this formulated before you start coding:</p>
+
+<p>Initialize two pointers, p and q, which point to the beginning of A and B, respectively.</p>
+
+<ol>
+  <li>Initialize k to an index at the start of the result array, R.</li>
+  <li>Compare the values at p and q.</li>
+  <li>If A[p] is smaller, insert A[p] into R[k]. Increment p and k.</li>
+  <li>If B[q] is smaller, insert B[q] into R[k]. Increment q and k.</li>
+  <li>Go to step 3.</li>
+</ol>
+
+<p>You don’t have to write this out by hand, but you do need to understand it at this level. Trying to skip a step and code before you’re totally comfortable will only slow you down.</p>
+
+<h3 id="step-6-implement-the-code">Step 6: Implement the Code</h3>
+
+<p>You don’t need to rush through your code; in fact, this will most likely hurt you. Just go at a nice, slow, methodical pace, and remember this advice.</p>
+
+<ul>
+  <li>Use data structures generously. Where relevant, use a good data structure or define your own. For example, if you’re asked a problem involving finding the minimum age for group of people, consider defining a data structure to represent a person. This shows your interviewer that you care about good object-oriented design.</li>
+  <li>Modularize you code first. If there are discrete steps in your algorithm, move these into separate functions. In fact, this can actually help you get out of doing tedious work. Imagine, as part of a broader algorithm, you need to convert a letter from A to Z to a number from 0 to 26. This is a tedious thing to write. Just modularize it off to another function and you probably won’t need to worry about ever writing it.</li>
+  <li>Don’t crowd your code. Many candidates will start writing their code in the middle of the whiteboard. This is fine for the first few lines, but whiteboards aren’t that big.</li>
+</ul>
+
+<p>If you feel yourself getting confused while coding, stop and go back to your example. You don’t need to code straight through. It’s far better that you take a break than write nonsensical code.</p>
+
+<h3 id="step-7-test">Step 7: Test</h3>
+
+<p>It is rare for a candidate to write flawless code. Not testing therefore suggests two problems. First, it leaves bugs in your code. Second, it suggests that you’re the type of person who doesn’t test their code well.</p>
+
+<p>Therefore, it’s very important to test your code.</p>
+
+<p>To discover bugs the faster, do the following five steps:</p>
+
+<ol>
+  <li>Review your code conceptually. What is the meaning of each line? Does it do what you think it should?</li>
+  <li>Review error hot spots. Is there anything in your code that looks funny? Do your boundary conditions look right? What about your base cases?</li>
+  <li>Test against a small example. You want your example to create an algorithm to be big, but now you want a small one. An example that’s too big will take a long time to run through. This is time-consuming, but it might also cause you to rush the testing and miss serious bugs.</li>
+  <li>Pinpoint potential issues. What sorts of test cases would test against specific potential issues? For example, you might sense that there could be a bug with one array that’s much shorter than the other; test for this situation specifically.</li>
+  <li>Test error cases. Finally, test the true error conditions. What happens on a null string or negative values?</li>
+</ol>
+
+<p>When you find a mistake, relax. Almost no one writes bug-free code; what’s important is how you react to it. Point out the mistake, and carefully analyze why the bug is occurring. Is it really just when you pass in 0, or does it happen in other cases, too?</p>
+
+<p>Bugs are not a big deal. The important thing is that you think through how to fix issues you see rather than making a quick and dirty fix. A fix that works for that test case might not work for all test cases, so make sure it’s the right one.</p>
+

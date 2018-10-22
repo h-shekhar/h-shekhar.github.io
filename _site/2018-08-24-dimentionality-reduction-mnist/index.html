@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  <title>Dimentionality Reduction using MNIST data set</title>
+
+  <meta name="author" content="Applied Articles" />
+
+  
+  <meta name="description" content="PCA, t-SNE">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Applied Articles - A Data Science Blog" href="/feed.xml" />
+
+  
+
+  
+
+  
+    
+      
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+  
+
+  
+
+  
+
+    <!-- Facebook OpenGraph tags -->
+  
+
+  
+  <meta property="og:title" content="Dimentionality Reduction using MNIST data set" />
+  
+
+   
+  <meta property="og:description" content="PCA, t-SNE">
+  
+
+
+  <meta property="og:type" content="website" />
+
+  
+  <meta property="og:url" content="http://localhost:4000/2018-08-24-dimentionality-reduction-mnist/" />
+  <link rel="canonical" href="http://localhost:4000/2018-08-24-dimentionality-reduction-mnist/" />
+  
+
+  
+  <meta property="og:image" content="http://localhost:4000/img/logo.jpeg" />
+  
+
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+  <meta name="twitter:title" content="Dimentionality Reduction using MNIST data set" />
+  
+
+  
+  <meta name="twitter:description" content="PCA, t-SNE">
+  
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/img/logo.jpeg" />
+  
+
+  
+
+</head>
+
+
+  <body>
+
+    
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+        <a class="navbar-brand" href="http://localhost:4000">Applied Articles</a>
+      
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Blog</a>
+            <div class="navlinks-children">
+              
+                
+                  
+
+
+
+
+
+
+<a href="/tags">Tags</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/projects">Projects</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/aboutme">About Me</a>
+
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href="http://localhost:4000 ">
+	      <img class="avatar-img" src="/img/logo.jpeg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Dimentionality Reduction using MNIST data set</h1>
+		  
+		    
+			<h2 class="post-subheading">PCA, t-SNE</h2>
+			
+		  
+		  
+		  
+		  	
+		  		<span class="post-meta">Posted on August 24, 2018</span>
+		  	
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      
+
+      <article role="main" class="blog-post">
+        <h2 id="what-is-dimensionality-reduction">What is Dimensionality Reduction?</h2>
+<p>In machine learning, dimensionality reduction is the process of converting any data which is present in a higher dimension to somewhat lower dimension by preserving the underlying information concisely. We often apply a bunch of dimensionality reduction technique to better visualize our data. But that is not always the case. Sometimes we might value the performance over precision so we could reduce high n dimension data to n’ dimension (n’ &lt;  n) data so as to perform manipulation faster.</p>
+
+<h3 id="mnist-data-set">MNIST Data set</h3>
+<p>The MNIST database of handwritten digits, available from this page, has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST. The digits have been size-normalized and centered in a fixed-size image. Know more about <a href="http://yann.lecun.com/exdb/mnist/">MNIST</a> dataset.</p>
+
+<h3 id="lets-dive-in">Let’s Dive In</h3>
+
+<p>Loading data sets.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">d0</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'./mnist_train.csv'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">d0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d0</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c">#print first 5 row of d0</span>
+
+<span class="c">#save the labels into variable into l</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">d0</span><span class="p">[</span><span class="s">'label'</span><span class="p">]</span>
+
+<span class="c">#drop the label feature and store the pixel data in d</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">d0</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">"label"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Display Dimension of data set</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Display and plot a number</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="n">idx</span> <span class="o">=</span> <span class="mi">801</span>
+
+<span class="n">grid_data</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span><span class="mi">28</span><span class="p">)</span> <span class="c">#reshape from 1D to 2D pixel array</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">grid_data</span><span class="p">,</span> <span class="n">interpolation</span> <span class="o">=</span> <span class="s">"none"</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s">"gray"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+</code></pre></div></div>
+<p><img src="/img/2018/08/digit.png" alt="Plot a Number" class="img-responsive" /></p>
+
+<h2 id="principal-component-analysis-pca">Principal Component Analysis <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">(PCA)</a></h2>
+<h3 id="2-d-visualization-using-pca">2-D Visualization using PCA</h3>
+
+<p>Steps to perform PCA manually:</p>
+
+<ol>
+  <li>Load the data-sets.</li>
+  <li>Perform pre-processing - Standardizing the data.(Mean=0, Variance=1).</li>
+  <li>Find Co-Variance Matrix which is S = A^T * A.</li>
+  <li>Find Eigen Values and corresponding Eigen Vector from the above co-var matrix (in this example we are taking top two eigen values)(2 is the number of dim of the new feature sub-space which is &lt;=d.)</li>
+  <li>Taking top 2 eigen vector and multiplying with sample data so as to get new coordinate system.</li>
+  <li>Plot the new coordinates.</li>
+</ol>
+
+<p>Display the shape of sample data set.
+Pick first 15K data-points to work on for time-effeciency.
+We can perform the same analysis on all of 42K data-points.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">labels</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15000</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15000</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The shape of the sample data = "</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c">#15k data-points with 784(28*28) features</span>
+</code></pre></div></div>
+
+<p>Data pre-processing : Standardizing the data.
+Standardize features by removing the mean and scaling to unit variance</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">standardized_data</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">standardized_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Find Co-variance Matrix which is A^T * A.
+Given matrix A is 15kx784 dimension &amp; upon computing A^T * A will end up being 784x784 dimension.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sample_data</span> <span class="o">=</span> <span class="n">standardized_data</span>
+<span class="c">#matrix multiplication using Numpy</span>
+<span class="n">covar_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">sample_data</span><span class="o">.</span><span class="n">T</span> <span class="p">,</span> <span class="n">sample_data</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The Shape of the Co-Variance matrix is = "</span><span class="p">,</span> <span class="n">covar_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c">#(Co-Var matrix is of dxd size)</span>
+</code></pre></div></div>
+<p>Finding the top two eigen values and corresponding eigen vector for projecting onto a 2-Dim space.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">eigh</span>
+<span class="c"># the parameter 'eigvals' is defined (low value to high value) </span>
+<span class="c"># eigh function will return the eigen values in asending order</span>
+<span class="c"># this code generates only the top 2 (782 and 783) eigenvalues since indexing start from 0.</span>
+<span class="n">values</span><span class="p">,</span> <span class="n">vectors</span> <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">covar_matrix</span><span class="p">,</span> <span class="n">eigvals</span><span class="o">=</span><span class="p">(</span><span class="mi">782</span><span class="p">,</span><span class="mi">783</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Shape of the eigen vectors = "</span><span class="p">,</span> <span class="n">vectors</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c"># converting the eigen vectors into (2,d) shape for easyness of further computations</span>
+<span class="n">vectors</span> <span class="o">=</span> <span class="n">vectors</span><span class="o">.</span><span class="n">T</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Updated shape of eigen vectors = "</span><span class="p">,</span><span class="n">vectors</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c"># here the vectors[1] represent the eigen vector corresponding 1st principal eigen vector</span>
+<span class="c"># here the vectors[0] represent the eigen vector corresponding 2nd principal eigen vector</span>
+</code></pre></div></div>
+<p>Projecting the original data sample on the plane formed by two principal eigen vectors by vector-vector multiplication.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_coordinates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">vectors</span><span class="p">,</span> <span class="n">sample_data</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="c">#taking top 2 eigen vector and multiplying with sample data so as to get new coordinate system</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Resultant new data points' shape"</span><span class="p">,</span> <span class="n">vectors</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s">"X"</span><span class="p">,</span> <span class="n">sample_data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s">"="</span> <span class="p">,</span> <span class="n">new_coordinates</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c">#For every point we get 2-dim representation which is 2x15k</span>
+<span class="c">#New coordinate have 2 rows each correspoing to the each new dimensions or  principle coordinate and 15k points.</span>
+</code></pre></div></div>
+<p>Appending label to the 2d projected data (simple vertical stacking)</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_coordinates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">new_coordinates</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c"># Creating a new data frame for plotting the labelled points</span>
+<span class="n">dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">new_coordinates</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s">"1st_principal"</span><span class="p">,</span> <span class="s">"2nd_principal"</span><span class="p">,</span> <span class="s">"label"</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dataframe</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div></div>
+<p>Plotting the 2D data points with seaborn</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sn</span>
+<span class="n">sn</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s">"label"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="nb">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">,</span> <span class="s">'1st_principal'</span><span class="p">,</span> <span class="s">'2nd_principal'</span><span class="p">)</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<p><img src="/img/2018/08/pca1.png" alt="PCA Plotting" class="img-responsive" /></p>
+
+<h3 id="pca-using-scikit-learn">PCA using Scikit-Learn</h3>
+
+<p>Initializing the PCA</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">decomposition</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">decomposition</span><span class="o">.</span><span class="n">PCA</span><span class="p">()</span>
+</code></pre></div></div>
+<p>Configuring the parameters
+The number of components = 2</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pca</span><span class="o">.</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">pca_data</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sample_data</span><span class="p">)</span>
+
+<span class="c">#pca reduced will contain the 2d projects of simple data</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"shape of pca_reduced.shape ="</span><span class="p">,</span> <span class="n">pca_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Attaching the label for each 2-d data point</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pca_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">pca_data</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c"># creating a new data fram which help us in ploting the result data</span>
+<span class="n">pca_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">pca_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s">"1st_principal"</span><span class="p">,</span> <span class="s">"2nd_principal"</span><span class="p">,</span> <span class="s">"label"</span><span class="p">))</span>
+<span class="n">sn</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s">"label"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="nb">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">,</span> <span class="s">'1st_principal'</span><span class="p">,</span> <span class="s">'2nd_principal'</span><span class="p">)</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<p><img src="/img/2018/08/pca2.png" alt="PCA Plotting" class="img-responsive" /></p>
+
+<h3 id="pca-for-dimentionality-reduction-not-for-visualization">PCA for Dimentionality Reduction (not for visualization)</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pca</span><span class="o">.</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">784</span>
+<span class="n">pca_data</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sample_data</span><span class="p">)</span>
+
+<span class="n">percentage_var_explained</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_</span><span class="p">);</span>
+
+<span class="n">cum_var_explained</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">percentage_var_explained</span><span class="p">)</span>
+
+<span class="c"># Plot the PCA spectrum</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cum_var_explained</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'tight'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'n_components'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Cumulative_explained_variance'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c"># If we take 200-dimensions, approx. 90% of variance is expalined.</span>
+</code></pre></div></div>
+<p><img src="/img/2018/08/pca3.png" alt="PCA Plotting" class="img-responsive" /></p>
+
+<h2 id="t-distributed-stochastic-neighbor-embedding-t-sne">t-distributed stochastic neighbor embedding <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">(t-SNE)</a></h2>
+<h3 id="t-sne-using-scikit-learn">t-SNE using Scikit-Learn</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
+
+<span class="c">#Picking the top 1000 points as TSNE takes a lot for 15k points</span>
+<span class="n">data_1000</span> <span class="o">=</span> <span class="n">standardized_data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1000</span><span class="p">,:]</span>
+<span class="n">labels_1000</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1000</span><span class="p">]</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c"># configuring the parameteres</span>
+<span class="c"># the number of components = 2</span>
+<span class="c"># default perplexity = 30</span>
+<span class="c"># default learning rate = 200</span>
+<span class="c"># default Maximum number of iterations for the optimization = 1000</span>
+
+<span class="n">tsne_data</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_1000</span><span class="p">)</span>
+
+<span class="c">#Creating a new data frame which help us in plotting the result data</span>
+<span class="n">tsne_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">tsne_data</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">labels_1000</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+<span class="n">tsne_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tsne_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s">"Dim1"</span><span class="p">,</span> <span class="s">"Dim2"</span><span class="p">,</span> <span class="s">"label"</span><span class="p">))</span>
+
+<span class="c">#Plotting the result of tsne</span>
+<span class="n">sn</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">tsne_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s">"label"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="nb">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">,</span> <span class="s">'Dim1'</span><span class="p">,</span> <span class="s">'Dim2'</span><span class="p">)</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<p><img src="/img/2018/08/tsne.png" alt="t-SNE Plotting" class="img-responsive" /></p>
+
+<h3 id="a-variation-of-t-sne-with-perplexity50">A variation of t-SNE with perplexity=50</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">perplexity</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">tsne_data</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_1000</span><span class="p">)</span> 
+
+<span class="c"># creating a new data fram which help us in ploting the result data</span>
+<span class="n">tsne_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">tsne_data</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">labels_1000</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+<span class="n">tsne_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tsne_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s">"Dim_1"</span><span class="p">,</span> <span class="s">"Dim_2"</span><span class="p">,</span> <span class="s">"label"</span><span class="p">))</span>
+
+<span class="c"># Ploting the result of tsne</span>
+<span class="n">sn</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">tsne_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s">"label"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="nb">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">,</span> <span class="s">'Dim_1'</span><span class="p">,</span> <span class="s">'Dim_2'</span><span class="p">)</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">'With perplexity = 50'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<p><img src="/img/2018/08/tsne1.png" alt="t-SNE Plotting" class="img-responsive" /></p>
+
+<h3 id="a-variation-of-t-sne-with-perplexity50-and-iteration5000">A variation of t-SNE with perplexity=50 and #iteration=5000</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">perplexity</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>  <span class="n">n_iter</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">tsne_data</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_1000</span><span class="p">)</span> 
+
+<span class="c"># creating a new data fram which help us in ploting the result data</span>
+<span class="n">tsne_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">tsne_data</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">labels_1000</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+<span class="n">tsne_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tsne_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s">"Dim_1"</span><span class="p">,</span> <span class="s">"Dim_2"</span><span class="p">,</span> <span class="s">"label"</span><span class="p">))</span>
+
+<span class="c"># Ploting the result of tsne</span>
+<span class="n">sn</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">tsne_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s">"label"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="nb">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">,</span> <span class="s">'Dim_1'</span><span class="p">,</span> <span class="s">'Dim_2'</span><span class="p">)</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">'With perplexity = 50, n_iter=5000'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<p><img src="/img/2018/08/tsne2.png" alt="t-SNE Plotting" class="img-responsive" /></p>
+
+<h3 id="a-variation-of-t-sne-with-perplexity2">A variation of t-SNE with perplexity=2</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">perplexity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">tsne_data</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_1000</span><span class="p">)</span> 
+
+<span class="c"># creating a new data fram which help us in ploting the result data</span>
+<span class="n">tsne_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">tsne_data</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">labels_1000</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+<span class="n">tsne_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tsne_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s">"Dim_1"</span><span class="p">,</span> <span class="s">"Dim_2"</span><span class="p">,</span> <span class="s">"label"</span><span class="p">))</span>
+
+<span class="c"># Ploting the result of tsne</span>
+<span class="n">sn</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">tsne_df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s">"label"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="nb">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">,</span> <span class="s">'Dim_1'</span><span class="p">,</span> <span class="s">'Dim_2'</span><span class="p">)</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">'With perplexity = 2'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<p><img src="/img/2018/08/tsne3.png" alt="t-SNE Plotting" class="img-responsive" /></p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          Tags:
+          
+          
+            <a href="/tags#machine learning">machine learning</a>
+          
+            <a href="/tags#python">python</a>
+          
+          
+        </div>
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+  <!--- Share on Twitter -->
+    <a href="https://twitter.com/intent/tweet?text=Dimentionality+Reduction+using+MNIST+data+set+http://localhost:4000/2018-08-24-dimentionality-reduction-mnist/"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+  <!--- Share on Facebook -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2018-08-24-dimentionality-reduction-mnist/"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+
+  
+  <!--- Share on LinkedIn -->
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2018-08-24-dimentionality-reduction-mnist/"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="/2018-07-27-how-to-practice-interview-questions/" data-toggle="tooltip" data-placement="top" title="How to practice the interview questions">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="/2018-09-04-eda-diabetes-dataset/" data-toggle="tooltip" data-placement="top" title="Pima Indians onset of Diabetes dataset">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+        <div class="disqus-comments">
+          <div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'appliedarticles';
+        /* ensure that pages with query string get the same discussion */
+            var url_parts = window.location.href.split("?");
+            var disqus_url = url_parts[0];
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        </div>
+          
+      
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links"><li><a href="/feed.xml" title="RSS"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">RSS</span>
+              </a>
+            </li><li><a href="https://www.facebook.com/hshekhar0" title="Facebook"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Facebook</span>
+              </a>
+            </li><li><a href="https://github.com/appliedarticles" title="GitHub"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">GitHub</span>
+              </a>
+            </li><li><a href="https://linkedin.com/in/hshekhar20" title="LinkedIn"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+            </li></ul>
+      <p class="copyright text-muted">
+      Applied Articles
+      &nbsp;&bull;&nbsp;
+      2018
+
+      
+
+      
+      </p>
+          <!-- Please don't remove this, keep my open source work credited :) -->
+    <p class="theme-by text-muted">
+      Theme by
+      <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+    </p> 
+    <p class="theme-by text-muted">Code with <span style="font-size:120%;color:red;">&hearts;</span> in India</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+
+  
+  </body>
+</html>
