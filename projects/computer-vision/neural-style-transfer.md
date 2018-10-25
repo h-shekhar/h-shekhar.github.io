@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Neural Artistic Style Transfer
+title: Neural Artistic Style Transfer using Tensorflow
 subtitle: Creating art with deeplearning
 type: computer-vision
 comments: true
