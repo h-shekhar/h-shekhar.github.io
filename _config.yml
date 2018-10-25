@@ -72,7 +72,7 @@ social-network-links:
   rss: true
 #  email: "test@gmail.com"
   facebook: hshekhar0
-  github: appliedarticles
+#github: 
 #twitter: daattali
 #  reddit: yourname
 #  google-plus: +DeanAttali
@@ -97,7 +97,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "appliedarticles.com" 
+#url-pretty: "appliedarticles.com" 
 
 # --- Web Statistics Section --- #
 

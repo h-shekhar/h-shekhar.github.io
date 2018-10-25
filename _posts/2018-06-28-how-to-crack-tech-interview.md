@@ -114,3 +114,7 @@ When you find a mistake, relax. Almost no one writes bug-free code; what’s imp
 
 Bugs are not a big deal. The important thing is that you think through how to fix issues you see rather than making a quick and dirty fix. A fix that works for that test case might not work for all test cases, so make sure it’s the right one.
 
+
+_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
+{: .box-warning}
+

@@ -357,3 +357,7 @@ train: [0.1 0.4 0.5 0.6], test: [0.2 0.3]
 train: [0.2 0.3 0.4 0.6], test: [0.1 0.5]  
 train: [0.1 0.2 0.3 0.5], test: [0.4 0.6]  
 {: .box-note}
+
+
+_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
+{: .box-warning}

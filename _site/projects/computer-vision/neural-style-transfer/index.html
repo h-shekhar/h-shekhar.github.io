@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  <title>Neural Artistic Style Transfer</title>
+
+  <meta name="author" content="Applied Articles" />
+
+  
+  <meta name="description" content="Creating art with deeplearning">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Applied Articles - A Data Science Blog" href="/feed.xml" />
+
+  
+
+  
+
+  
+    
+      
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+  
+
+  
+
+  
+
+    <!-- Facebook OpenGraph tags -->
+  
+
+  
+  <meta property="og:title" content="Neural Artistic Style Transfer" />
+  
+
+   
+  <meta property="og:description" content="Creating art with deeplearning">
+  
+
+
+  <meta property="og:type" content="website" />
+
+  
+  <meta property="og:url" content="http://localhost:4000/projects/computer-vision/neural-style-transfer/" />
+  <link rel="canonical" href="http://localhost:4000/projects/computer-vision/neural-style-transfer/" />
+  
+
+  
+  <meta property="og:image" content="http://localhost:4000/img/logo.jpeg" />
+  
+
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+  <meta name="twitter:title" content="Neural Artistic Style Transfer" />
+  
+
+  
+  <meta name="twitter:description" content="Creating art with deeplearning">
+  
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/img/logo.jpeg" />
+  
+
+  
+
+</head>
+
+
+  <body>
+
+    
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+        <a class="navbar-brand" href="http://localhost:4000">Applied Articles</a>
+      
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Blog</a>
+            <div class="navlinks-children">
+              
+                
+                  
+
+
+
+
+
+
+<a href="/tags">Tags</a>
+
+                
+              
+            </div>
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/projects">Projects</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/aboutme">About Me</a>
+
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href="http://localhost:4000 ">
+	      <img class="avatar-img" src="/img/logo.jpeg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Neural Artistic Style Transfer</h1>
+		  
+		    
+			<h2 class="post-subheading">Creating art with deeplearning</h2>
+			
+		  
+		  
+		  
+		  	
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      
+
+      <article role="main" class="blog-post">
+        <h2 id="introduction">Introduction</h2>
+
+<p>In fine art, especially painting, humans have mastered the skill to create unique visual experiences through composing a complex interplay between the content and style of an image. Thus far the algorithmic basis of this process is unknown and there exists no artificial system with similar capabilities. However, in other key areas of visual perception such as object and face recognition near-human performance was recently demonstrated by a class of biologically inspired vision models called Deep Neural Networks. Here we introduce an artificial system based on a Deep Neural Network that creates artistic images of high perceptual quality. The system uses neural representations to separate and recombine content and style of arbitrary images, providing a neural algorithm for the creation of artistic images.</p>
+
+<h2 id="understanding-the-objective">Understanding the Objective</h2>
+
+<p>Neural style transfer is an optimization technique used where we have two images that we want to “blend” together. First is Content Image and second is Style Reference Image.</p>
+<ul>
+  <li><strong><em>Content Image</em></strong> is the image whose content we want to keep.</li>
+  <li><strong><em>Style Reference Image</em></strong> is the image whose style we want to keep.</li>
+</ul>
+
+<p><img src="/img/2018/projects/com-vis/tue.jpg" alt="Plot" class="img-responsive" />
+<em>Fig: Content Image</em></p>
+
+<p><img src="/img/2018/projects/com-vis/sn.jpg" alt="Plot" class="img-responsive" />
+<em>Fig: Style Reference Image</em></p>
+
+<p>Using these two image we need to create a base image such that it depict the <em>content</em> of the Content Image and painted in the <em>style</em> of the Style Image. This base image will then evolve as a final image as we keep minimizing the content and style loss functions.</p>
+
+<h2 id="define-content-and-style-representations">Define Content and Style representations</h2>
+
+<p>In order to get both the content and style representations of our image, we will look at some intermediate layers within our model. Intermediate layers represent feature maps that become increasingly higher ordered as you go deeper. In this case, we are using the network architecture VGG19, a pretrained image classification network. These intermediate layers are necessary to define the representation of content and style from our images. For an input image, we will try to match the corresponding style and content target representations at these intermediate layers.</p>
+
+<p>First we load VGG19, and feed in our input tensor to the model. This will allow us to extract the feature maps of the content, style, and generated images.
+In a nutshell, we first feed this VGG model with our input tensor and pull out these intermediate layers from our network.</p>
+
+<p>Then we need to define the layer of interest that we need to pull from the generated model.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Content layer where will pull our feature maps</span>
+<span class="n">content_layers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'block5_conv2'</span><span class="p">]</span> 
+
+<span class="c"># Style layer we are interested in</span>
+<span class="n">style_layers</span> <span class="o">=</span> <span class="p">[</span><span class="s">'block1_conv1'</span><span class="p">,</span>
+                <span class="s">'block2_conv1'</span><span class="p">,</span>
+                <span class="s">'block3_conv1'</span><span class="p">,</span> 
+                <span class="s">'block4_conv1'</span><span class="p">,</span> 
+                <span class="s">'block5_conv1'</span>
+               <span class="p">]</span>
+
+<span class="n">num_content_layers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">content_layers</span><span class="p">)</span>
+<span class="n">num_style_layers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">style_layers</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>We’ll load our pretrained image classification network. Then we grab the layers of interest as we defined earlier. Then we define a Model by setting the model’s inputs to an image and the outputs to the outputs of the style and content layers. In other words, we created a model that will take an input image and output the content and style intermediate layers.</p>
+
+<h2 id="define-loss-functions">Define Loss Functions</h2>
+
+<p>We need to define two loss function <strong><em>Content Loss</em></strong> and <strong><em>Style Loss</em></strong>.</p>
+
+<h2 id="content-loss">Content Loss</h2>
+
+<p>Content loss definition is actually quite simple. We’ll pass the network both the desired content image and our base input image. This will return the intermediate layer outputs from our model. Then we simply take the euclidean distance between the two intermediate representations of those images.</p>
+
+<p><img src="/img/2018/projects/com-vis/cl.png" alt="Plot" class="img-responsive" /></p>
+
+<p>Fˡᵢⱼ(x) and Pˡᵢⱼ(x) describe the respective intermediate feature representation of the network with inputs x and p at layer l .</p>
+
+<p>We perform backpropagation in the usual way such that we minimize this content loss. We thus change the initial image until it generates a similar response in a certain layer as the original content image.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_content_loss</span><span class="p">(</span><span class="n">base_content</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">base_content</span> <span class="o">-</span> <span class="n">target</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="style-loss">Style Loss</h2>
+
+<p>Computing style loss is a bit more involved, but follows the same principle, this time feeding our network the base input image and the style image. However, instead of comparing the raw intermediate outputs of the base input image and the style image, we instead compare the Gram matrices of the two outputs.</p>
+
+<p>Mathematically, we describe the style loss of the base input image, x, and the style image, a, as the distance between the style representation (the gram matrices) of these images. We describe the style representation of an image as the correlation between different filter responses given by the Gram matrix Gˡ, where Gˡᵢⱼ is the inner product between the vectorized feature map i and j in layer l. We can see that Gˡᵢⱼ generated over the feature map for a given image represents the correlation between feature maps i and j.</p>
+
+<p>To generate a style for our base input image, we perform gradient descent from the content image to transform it into an image that matches the style representation of the original image. We do so by minimizing the mean squared distance between the feature correlation map of the style image and the input image. The contribution of each layer to the total style loss is described by</p>
+
+<p><img src="/img/2018/projects/com-vis/sl.png" alt="Plot" class="img-responsive" /></p>
+
+<p>where Gˡᵢⱼ and Aˡᵢⱼ are the respective style representation in layer l of input image x and style image a. Nl describes the number of feature maps, each of size Ml=height∗width. Thus, the total style loss across each layer is</p>
+
+<p><img src="/img/2018/projects/com-vis/sl1.png" alt="Plot" class="img-responsive" /></p>
+
+<p>where we weight the contribution of each layer’s loss by some factor wl.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">gram_matrix</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">):</span>
+  <span class="n">channels</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">input_tensor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">channels</span><span class="p">])</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">gram</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">transpose_a</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">gram</span> <span class="o">/</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+ 
+<span class="k">def</span> <span class="nf">get_style_loss</span><span class="p">(</span><span class="n">base_style</span><span class="p">,</span> <span class="n">gram_target</span><span class="p">):</span>
+  <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">channels</span> <span class="o">=</span> <span class="n">base_style</span><span class="o">.</span><span class="n">get_shape</span><span class="p">()</span><span class="o">.</span><span class="n">as_list</span><span class="p">()</span>
+  <span class="n">gram_style</span> <span class="o">=</span> <span class="n">gram_matrix</span><span class="p">(</span><span class="n">base_style</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">gram_style</span> <span class="o">-</span> <span class="n">gram_target</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="run-gradient-descent">Run Gradient Descent</h2>
+
+<p>In order to optimize our loss function we can use the Adam optimizer or L-BFGS optimizer. We iteratively update our output image such that it minimizes our loss: we don’t update the weights associated with our network, but instead we train our input image to minimize loss. In order to do this, we must know how we calculate our loss and gradients.</p>
+
+<h3 id="compute-feature-representations">Compute Feature Representations</h3>
+
+<p>We’ll define a feature representation function that will load our content and style image, feed them forward through our network, which will then output the content and style feature representations from our model.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_feature_representations</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">content_path</span><span class="p">,</span> <span class="n">style_path</span><span class="p">):</span>
+  <span class="n">content_image</span> <span class="o">=</span> <span class="n">load_and_process_img</span><span class="p">(</span><span class="n">content_path</span><span class="p">)</span>
+  <span class="n">style_image</span> <span class="o">=</span> <span class="n">load_and_process_img</span><span class="p">(</span><span class="n">style_path</span><span class="p">)</span>
+  
+  <span class="c"># batch compute content and style features</span>
+  <span class="n">stack_images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">style_image</span><span class="p">,</span> <span class="n">content_image</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">model_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">stack_images</span><span class="p">)</span>
+  
+  <span class="c"># Get the style and content feature representations from our model  </span>
+  <span class="n">style_features</span> <span class="o">=</span> <span class="p">[</span><span class="n">style_layer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">style_layer</span> <span class="ow">in</span> <span class="n">model_outputs</span><span class="p">[:</span><span class="n">num_style_layers</span><span class="p">]]</span>
+  <span class="n">content_features</span> <span class="o">=</span> <span class="p">[</span><span class="n">content_layer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">content_layer</span> <span class="ow">in</span> <span class="n">model_outputs</span><span class="p">[</span><span class="n">num_style_layers</span><span class="p">:]]</span>
+  <span class="k">return</span> <span class="n">style_features</span><span class="p">,</span> <span class="n">content_features</span>
+</code></pre></div></div>
+<h3 id="compute-the-loss">Compute the loss.</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compute_loss</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loss_weights</span><span class="p">,</span> <span class="n">init_image</span><span class="p">,</span> <span class="n">gram_style_features</span><span class="p">,</span> <span class="n">content_features</span><span class="p">):</span>
+  
+  <span class="n">style_weight</span><span class="p">,</span> <span class="n">content_weight</span><span class="p">,</span> <span class="n">total_variation_weight</span> <span class="o">=</span> <span class="n">loss_weights</span>
+  <span class="n">model_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">init_image</span><span class="p">)</span>
+  
+  <span class="n">style_output_features</span> <span class="o">=</span> <span class="n">model_outputs</span><span class="p">[:</span><span class="n">num_style_layers</span><span class="p">]</span>
+  <span class="n">content_output_features</span> <span class="o">=</span> <span class="n">model_outputs</span><span class="p">[</span><span class="n">num_style_layers</span><span class="p">:]</span>
+  
+  <span class="n">style_score</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">content_score</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="n">weight_per_style_layer</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_style_layers</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">target_style</span><span class="p">,</span> <span class="n">comb_style</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">gram_style_features</span><span class="p">,</span> <span class="n">style_output_features</span><span class="p">):</span>
+    <span class="n">style_score</span> <span class="o">+=</span> <span class="n">weight_per_style_layer</span> <span class="o">*</span> <span class="n">get_style_loss</span><span class="p">(</span><span class="n">comb_style</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">target_style</span><span class="p">)</span>
+    
+  <span class="c"># Accumulate content losses from all layers </span>
+  <span class="n">weight_per_content_layer</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_content_layers</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">target_content</span><span class="p">,</span> <span class="n">comb_content</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">content_features</span><span class="p">,</span> <span class="n">content_output_features</span><span class="p">):</span>
+    <span class="n">content_score</span> <span class="o">+=</span> <span class="n">weight_per_content_layer</span><span class="o">*</span> <span class="n">get_content_loss</span><span class="p">(</span><span class="n">comb_content</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">target_content</span><span class="p">)</span>
+  
+  <span class="n">style_score</span> <span class="o">*=</span> <span class="n">style_weight</span>
+  <span class="n">content_score</span> <span class="o">*=</span> <span class="n">content_weight</span>
+  <span class="n">total_variation_score</span> <span class="o">=</span> <span class="n">total_variation_weight</span> <span class="o">*</span> <span class="n">total_variation_loss</span><span class="p">(</span><span class="n">init_image</span><span class="p">)</span>
+
+  <span class="c"># Get total loss</span>
+  <span class="n">loss</span> <span class="o">=</span> <span class="n">style_score</span> <span class="o">+</span> <span class="n">content_score</span> <span class="o">+</span> <span class="n">total_variation_score</span> 
+  <span class="k">return</span> <span class="n">loss</span><span class="p">,</span> <span class="n">style_score</span><span class="p">,</span> <span class="n">content_score</span><span class="p">,</span> <span class="n">total_variation_score</span>
+</code></pre></div></div>
+<h3 id="compute-the-gradients">Compute the Gradients</h3>
+
+<p>We iteratively updated our image by applying our optimizers update rules using tf.gradient. The optimizer minimized the given losses with respect to our input image.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compute_grads</span><span class="p">(</span><span class="n">cfg</span><span class="p">):</span>
+  <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">GradientTape</span><span class="p">()</span> <span class="k">as</span> <span class="n">tape</span><span class="p">:</span> 
+    <span class="n">all_loss</span> <span class="o">=</span> <span class="n">compute_loss</span><span class="p">(</span><span class="o">**</span><span class="n">cfg</span><span class="p">)</span>
+  <span class="n">total_loss</span> <span class="o">=</span> <span class="n">all_loss</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="k">return</span> <span class="n">tape</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">total_loss</span><span class="p">,</span> <span class="n">cfg</span><span class="p">[</span><span class="s">'init_image'</span><span class="p">]),</span> <span class="n">all_loss</span>
+</code></pre></div></div>
+<h3 id="define-run-style-transfer-process">Define run style transfer process</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">run_style_transfer</span><span class="p">(</span><span class="n">content_path</span><span class="p">,</span> <span class="n">style_path</span><span class="p">,</span> <span class="n">num_iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">content_weight</span><span class="o">=</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">style_weight</span> <span class="o">=</span> <span class="mf">1e-2</span><span class="p">):</span> 
+  <span class="n">display_num</span> <span class="o">=</span> <span class="mi">100</span>
+  
+  <span class="n">model</span> <span class="o">=</span> <span class="n">get_model</span><span class="p">()</span> 
+  <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
+    <span class="n">layer</span><span class="o">.</span><span class="n">trainable</span> <span class="o">=</span> <span class="bp">False</span>
+  
+  <span class="n">style_features</span><span class="p">,</span> <span class="n">content_features</span> <span class="o">=</span> <span class="n">get_feature_representations</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">content_path</span><span class="p">,</span> <span class="n">style_path</span><span class="p">)</span>
+  <span class="n">gram_style_features</span> <span class="o">=</span> <span class="p">[</span><span class="n">gram_matrix</span><span class="p">(</span><span class="n">style_feature</span><span class="p">)</span> <span class="k">for</span> <span class="n">style_feature</span> <span class="ow">in</span> <span class="n">style_features</span><span class="p">]</span>
+  
+  <span class="n">init_image</span> <span class="o">=</span> <span class="n">load_and_process_img</span><span class="p">(</span><span class="n">content_path</span><span class="p">)</span>
+  <span class="n">init_image</span> <span class="o">=</span> <span class="n">tfe</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">init_image</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+ 
+  <span class="n">opt</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">AdamOptimizer</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+  <span class="n">iter_count</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">best_loss</span><span class="p">,</span> <span class="n">best_img</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">'inf'</span><span class="p">),</span> <span class="bp">None</span>
+  
+  <span class="n">loss_weights</span> <span class="o">=</span> <span class="p">(</span><span class="n">style_weight</span><span class="p">,</span> <span class="n">content_weight</span><span class="p">)</span>
+  <span class="n">cfg</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s">'model'</span><span class="p">:</span> <span class="n">model</span><span class="p">,</span>
+      <span class="s">'loss_weights'</span><span class="p">:</span> <span class="n">loss_weights</span><span class="p">,</span>
+      <span class="s">'init_image'</span><span class="p">:</span> <span class="n">init_image</span><span class="p">,</span>
+      <span class="s">'gram_style_features'</span><span class="p">:</span> <span class="n">gram_style_features</span><span class="p">,</span>
+      <span class="s">'content_features'</span><span class="p">:</span> <span class="n">content_features</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="run-the-model">Run the model</h2>
+
+<p>To run it on the given image.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">best</span><span class="p">,</span> <span class="n">best_loss</span> <span class="o">=</span> <span class="n">run_style_transfer</span><span class="p">(</span><span class="n">content_path</span><span class="p">,</span> <span class="n">style_path</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">show_intermediates</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="outcomes">Outcomes</h2>
+
+<p>Output after several iterations.</p>
+
+<p><img src="/img/2018/projects/com-vis/st.png" alt="Plot" class="img-responsive" /></p>
+
+<p>This comes the final output.</p>
+
+<p><img src="/img/2018/projects/com-vis/out.png" alt="Plot" class="img-responsive" /></p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>To run the code in google colab refer <a href="https://colab.research.google.com/github/tensorflow/models/blob/master/research/nst_blogpost/4_Neural_Style_Transfer_with_Eager_Execution.ipynb">here</a></li>
+  <li>https://arxiv.org/pdf/1508.06576.pdf</li>
+</ul>
+
+<p class="box-warning"><em>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</em></p>
+
+      </article>
+
+      
+
+      
+
+      <ul class="pager blog-pager">
+        
+        
+      </ul>
+
+      
+        <div class="disqus-comments">
+          <div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'applied-articles';
+        /* ensure that pages with query string get the same discussion */
+            var url_parts = window.location.href.split("?");
+            var disqus_url = url_parts[0];
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        </div>
+          
+      
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links"><li><a href="/feed.xml" title="RSS"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">RSS</span>
+              </a>
+            </li><li><a href="https://www.facebook.com/hshekhar0" title="Facebook"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Facebook</span>
+              </a>
+            </li><li><a href="https://github.com/appliedarticles" title="GitHub"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">GitHub</span>
+              </a>
+            </li><li><a href="https://linkedin.com/in/hshekhar20" title="LinkedIn"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+            </li></ul>
+      <p class="copyright text-muted">
+      Applied Articles
+      &nbsp;&bull;&nbsp;
+      2018
+
+      
+      &nbsp;&bull;&nbsp;
+      <a href="http://localhost:4000">appliedarticles.com</a>
+      
+
+      
+      </p>
+          <!-- Please don't remove this, keep my open source work credited :) -->
+    <p class="theme-by text-muted">
+      Theme by
+      <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+    </p> 
+    <p class="theme-by text-muted">Code with <span style="font-size:120%;color:red;">&hearts;</span> in India</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-127947870-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  
+  </body>
+</html>

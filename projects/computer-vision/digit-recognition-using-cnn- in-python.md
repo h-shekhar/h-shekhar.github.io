@@ -266,3 +266,7 @@ Epoch 10/10
 60000/60000 [==============================] - 80s 1ms/step - loss: 0.0298 - acc: 0.9903 - val_loss: 0.0269 - val_acc: 0.9917
 Large CNN Error: 0.83%
 ```
+
+
+_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
+{: .box-warning}

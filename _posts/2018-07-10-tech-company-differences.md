@@ -16,3 +16,7 @@ Cultural differences between companies can often be traced back to the company�
 - **Google** is the nerdiest of the nerdy. Founded by two former Stanford PhDs, the company still prizes engineers above nonengineers. The company moves quickly, shipping products weekly, and can value technical innovation even to a fault. As a web-based company, it can afford to take some risks on products; after all, shipping a new application to the web is so much easier than boxing up and mailing software. Google values its flat hierarchy, but there’s a downside as well. Your manager may have too many people under her to fuss about the progress of your career, and moving up can be a challenge.
 
 - **Facebook** has learned from Google’s example and modeled much of its culture after it-with a few differences. Whereas Google tends to be more science and academic, Facebook prioritizes getting things done. Its original mantra---“move fast and break things”---speaks volumes about the attitude of the company. It doesn’t want to let an opportunity go by because it moved too slowly or was scared of taking risks. It looks for this sort of attitude in its employees. As the company has grown, it has seen the value in getting more things right the first time, but it still retains hacker culture.
+
+
+_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
+{: .box-warning}

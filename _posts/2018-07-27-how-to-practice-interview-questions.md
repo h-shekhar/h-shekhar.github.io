@@ -16,3 +16,7 @@ Take your time-solving problems, and try the following seven-step approach in pr
 5. Test your code! By hand, that is. No cheating with a computer!
 6. Type your code into a computer exactly as is. Rerun both the test cases you tried and some new ones.
 7. Start a list of all the mistakes you made, and analyze what types of mistakes you make the most often. Are these specific mistakes?
+
+
+_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
+{: .box-warning}

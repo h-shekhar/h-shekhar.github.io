@@ -70,3 +70,6 @@ There are various strategies, such as training the whole initialized network or 
 
 ***DATA***. The companies that have lots of this magic four letter word are the ones that have an inherent advantage over the rest of the competition. The more training data that you can give to a network, the more training iterations you can make, the more weight updates you can make, and the better tuned to the network is when it goes to production. Facebook and Instagram can use all the photos of the billion users it currently has, Google can use search data, and Amazon can use data from the millions of products that are bought every day. And now you know the magic behind how they use it.
 
+
+_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
+{: .box-warning}

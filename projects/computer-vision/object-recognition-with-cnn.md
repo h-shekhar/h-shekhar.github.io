@@ -194,3 +194,7 @@ model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=epochs, bat
 scores = model.evaluate(X_test, y_test, verbose=0)
 print("Accuracy: %.2f%%" % (scores[1]*100))
 ```
+
+
+_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
+{: .box-warning}
