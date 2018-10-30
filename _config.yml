@@ -25,6 +25,7 @@ description: A Data Science Blog
 navbar-links:
   Blog: 
     - Tags: "tags"
+    - Resources: "resource"
   Projects: "projects"
   About Me: "aboutme"
 

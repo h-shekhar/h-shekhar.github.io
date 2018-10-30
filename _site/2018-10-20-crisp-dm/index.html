@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 
-  <title>The Differences</title>
+  <title>CRoss-Industry Standard Process for Data Mining</title>
 
   <meta name="author" content="Applied Articles" />
 
   
-  <meta name="description" content="Top tech company">
+  <meta name="description" content="A gentle introduction to CRISP-DM">
   
 
   <link rel="alternate" type="application/rss+xml" title="Applied Articles - A Data Science Blog" href="/feed.xml" />
@@ -56,19 +56,19 @@
   
 
   
-  <meta property="og:title" content="The Differences" />
+  <meta property="og:title" content="CRoss-Industry Standard Process for Data Mining" />
   
 
    
-  <meta property="og:description" content="Top tech company">
+  <meta property="og:description" content="A gentle introduction to CRISP-DM">
   
 
 
   <meta property="og:type" content="website" />
 
   
-  <meta property="og:url" content="http://localhost:4000/2018-07-10-tech-company-differences/" />
-  <link rel="canonical" href="http://localhost:4000/2018-07-10-tech-company-differences/" />
+  <meta property="og:url" content="http://localhost:4000/2018-10-20-crisp-dm/" />
+  <link rel="canonical" href="http://localhost:4000/2018-10-20-crisp-dm/" />
   
 
   
@@ -82,11 +82,11 @@
   <meta name="twitter:creator" content="@" />
 
   
-  <meta name="twitter:title" content="The Differences" />
+  <meta name="twitter:title" content="CRoss-Industry Standard Process for Data Mining" />
   
 
   
-  <meta name="twitter:description" content="Top tech company">
+  <meta name="twitter:description" content="A gentle introduction to CRISP-DM">
   
 
   
@@ -210,16 +210,16 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-heading">
-          <h1>The Differences</h1>
+          <h1>CRoss-Industry Standard Process for Data Mining</h1>
 		  
 		    
-			<h2 class="post-subheading">Top tech company</h2>
+			<h2 class="post-subheading">A gentle introduction to CRISP-DM</h2>
 			
 		  
 		  
 		  
 		  	
-		  		<span class="post-meta">Posted on July 10, 2018</span>
+		  		<span class="post-meta">Posted on October 20, 2018</span>
 		  	
 		  
         </div>
@@ -239,24 +239,83 @@
       
 
       <article role="main" class="blog-post">
-        <p>Cultural differences between companies can often be traced back to the company’s roots.</p>
+        <h2 id="introduction">Introduction</h2>
+<p>CRISP-DM was conceived in late 1996 by three veterans of the young and immature data mining market. CRISP stands for “<strong><em>CR</em></strong>oss-<strong><em>I</em></strong>ndustry <strong><em>S</em></strong>tandard <strong><em>P</em></strong>rocess for <strong><em>D</em></strong>ata <strong><em>M</em></strong>ining.”</p>
 
+<p>This process model for data mining provides an overview of the life cycle of a data mining project. It contains all the phases of a project, their respective tasks, and the relationships between these tasks. Relationships could exist between any data mining tasks depending on the goals, the background, and the interest of the user-and most importantly-on the data.</p>
+
+<h2 id="crisp-dm-phases">CRISP-DM Phases</h2>
+<p>The life cycle of a data mining project consists of six phases as shown-</p>
+
+<p><img src="/img/2018/10/crisp.png" alt="Plot" class="img-responsive" height="400px" width="400px" /></p>
+
+<p><em>Data Science Project Life Cycle</em></p>
+
+<h2 id="1-business-understanding">1. Business Understanding</h2>
+<p>This initial phase focuses on understanding the project objectives and requirements from a business perspective, then converting this knowledge into a data mining problem definition and a preliminary plan designed to achieve the objectives.</p>
+
+<p><strong><em>Generic Tasks:</em></strong></p>
 <ul>
-  <li>
-    <p><strong>Amazon</strong>, many would argue, is more of a retail company than a software company. It faced extremely hard times during the dot-com crash and continues to battle profit margins that are levels of magnitude lower than those of a core software company. Amazon is consequently extremely frugal and refrains from providing the lavish perks that other software companies might. Additionally, some employees have suggested that the company does not value technical innovation for its own sake, and instead looks for an immediate and casual link to profits. But, do not let that deter you too much; indeed, Amazon is leading in multiple industries (retail, cloud computing, etc.) largely because of its technical innovation. The company moves at a rapid pace and pending deadlines often mean late nights.</p>
-  </li>
-  <li>
-    <p><strong>Apple</strong> is just as secretive inside as it is outside. When your innovation lies so heavily in your look and feel, and your market share depends on beautifully orchestrated hype, it’s no wonder. The company can’t afford to let its secret slip. Employees are die-hard fans, just as one would expect, but rarely know what coworkers from other teams are working on.</p>
-  </li>
-  <li>
-    <p><strong>Microsoft</strong> has dabbled with search and the web, but a large chunk of its earnings come from Windows and Office. Live patches to these products are expensive, so the company tends to operate on longer, multiyear release schedules. This means moving slower, taking fewer risks, and making sure to get everything right the first time. The bright side is that the company tends to have a good work/life balance, as ship dates are relatively infrequent. Many former employees say that though they loved the company, its mammoth size could stifle innovation and risk-taking. However, individual team cultures are all over the map, and some may be more innovative than others.</p>
-  </li>
-  <li>
-    <p><strong>Google</strong> is the nerdiest of the nerdy. Founded by two former Stanford PhDs, the company still prizes engineers above nonengineers. The company moves quickly, shipping products weekly, and can value technical innovation even to a fault. As a web-based company, it can afford to take some risks on products; after all, shipping a new application to the web is so much easier than boxing up and mailing software. Google values its flat hierarchy, but there’s a downside as well. Your manager may have too many people under her to fuss about the progress of your career, and moving up can be a challenge.</p>
-  </li>
-  <li>
-    <p><strong>Facebook</strong> has learned from Google’s example and modeled much of its culture after it-with a few differences. Whereas Google tends to be more science and academic, Facebook prioritizes getting things done. Its original mantra—“move fast and break things”—speaks volumes about the attitude of the company. It doesn’t want to let an opportunity go by because it moved too slowly or was scared of taking risks. It looks for this sort of attitude in its employees. As the company has grown, it has seen the value in getting more things right the first time, but it still retains hacker culture.</p>
-  </li>
+  <li>Determine business objectives.</li>
+  <li>Assess situation.</li>
+  <li>Determine data mining goals.</li>
+  <li>Produce project plan.</li>
+</ul>
+
+<h2 id="2-data-understanding">2. Data Understanding</h2>
+<p>The data understanding phase starts with initial data collection and proceeds with activities that enable you to become familiar with the data.</p>
+
+<p><strong><em>Generic Tasks:</em></strong></p>
+<ul>
+  <li>Collect initial data.</li>
+  <li>Describe data.</li>
+  <li>Explore data.</li>
+  <li>Verify data quality.</li>
+</ul>
+
+<h2 id="3-data-preparation">3. Data Preparation</h2>
+<p>The data preparation phase covers all activities needed to construct the final dataset or data that will be fed into the modeling tool(S) from the initial raw data. Tasks include table, records, and attribute selection, as well as transformation and cleaning of data for modeling tools.</p>
+
+<p><strong><em>Generic Tasks:</em></strong></p>
+<ul>
+  <li>Select data.</li>
+  <li>Clean data.</li>
+  <li>Construct data.</li>
+  <li>Integrate data.</li>
+  <li>Format data.</li>
+</ul>
+
+<h2 id="4-modeling">4. Modeling</h2>
+<p>In this phase, various modeling techniques are selected and applied, and their parameters are calibrated to optimal values.</p>
+
+<p><strong><em>Generic Tasks:</em></strong></p>
+<ul>
+  <li>Select modeling techniques.</li>
+  <li>Generate test design.</li>
+  <li>Build model.</li>
+  <li>Assess model.</li>
+</ul>
+
+<h2 id="5-evaluation">5. Evaluation</h2>
+<p>At this stage you have built a model that appears to have high quality from a data analysis perspective. Before proceeding to final deployment of the model, it is important to thoroughly evaluate it and review the steps executed to create it, to be certain the model properly achieves the business objectives. A key objective is to determine if there is some important business issue that has not been sufficiently considered.</p>
+
+<p><strong><em>Generic Tasks:</em></strong></p>
+<ul>
+  <li>Evaluate results.</li>
+  <li>Review process.</li>
+  <li>Determine next steps.</li>
+</ul>
+
+<h3 id="6-deployment">6. Deployment</h3>
+
+<p>Creation of the model is generally not the end of the project. Even if the purpose of the model is to increase knowledge of the data, the knowledge gained will need to be organized and presented ina way that the customer can use it. It often involves applying “live” models within an organization’s decision making processes. Depending on the requirements, the deployment phase can be as simple as generating a report or as complex as implemnting a repeatable data mining process across the enterprise.</p>
+
+<p><strong><em>Generic Tasks:</em></strong></p>
+<ul>
+  <li>Plan deployment.</li>
+  <li>Plan monitoring and maintenance.</li>
+  <li>Produce final report.</li>
+  <li>Review project.</li>
 </ul>
 
 <p class="box-warning"><em>In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here.</em></p>
@@ -268,9 +327,9 @@
           Tags:
           
           
-            <a href="/tags#career">career</a>
+            <a href="/tags#data mining">data mining</a>
           
-            <a href="/tags#tech company">tech company</a>
+            <a href="/tags#crisp-dm">crisp-dm</a>
           
           
         </div>
@@ -287,7 +346,7 @@
 
   
   <!--- Share on Twitter -->
-    <a href="https://twitter.com/intent/tweet?text=The+Differences+http://localhost:4000/2018-07-10-tech-company-differences/"
+    <a href="https://twitter.com/intent/tweet?text=CRoss-Industry+Standard+Process+for+Data+Mining+http://localhost:4000/2018-10-20-crisp-dm/"
       class="btn btn-social-icon btn-twitter" title="Share on Twitter">
       <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
       <span class="sr-only">Twitter</span>
@@ -296,7 +355,7 @@
 
   
   <!--- Share on Facebook -->
-    <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2018-07-10-tech-company-differences/"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2018-10-20-crisp-dm/"
       class="btn btn-social-icon btn-facebook" title="Share on Facebook">
       <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
       <span class="sr-only">Facebook</span>
@@ -307,7 +366,7 @@
 
   
   <!--- Share on LinkedIn -->
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2018-07-10-tech-company-differences/"
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2018-10-20-crisp-dm/"
       class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
       <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
       <span class="sr-only">LinkedIn</span>
@@ -323,13 +382,9 @@
       <ul class="pager blog-pager">
         
         <li class="previous">
-          <a href="/2018-06-28-how-to-crack-tech-interview/" data-toggle="tooltip" data-placement="top" title="How to crack the tech interview">&larr; Previous Post</a>
+          <a href="/2018-10-04-ways-to-use-convnet/" data-toggle="tooltip" data-placement="top" title="How to use ConvNets in different ways">&larr; Previous Post</a>
         </li>
         
-        
-        <li class="next">
-          <a href="/2018-07-27-how-to-practice-interview-questions/" data-toggle="tooltip" data-placement="top" title="How to practice the interview questions">Next Post &rarr;</a>
-        </li>
         
       </ul>
 
