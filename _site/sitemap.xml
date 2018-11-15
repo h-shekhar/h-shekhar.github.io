@@ -1,382 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-    
-    <url>
-      <loc>http://localhost:4000/2018-10-20-crisp-dm/</loc>
-      
-        <lastmod>2018-10-20T00:00:00+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/2018-10-04-ways-to-use-convnet/</loc>
-      
-        <lastmod>2018-10-04T00:00:00+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/2018-09-09-statistics-for-machine-learning/</loc>
-      
-        <lastmod>2018-09-09T00:00:00+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/2018-09-04-eda-diabetes-dataset/</loc>
-      
-        <lastmod>2018-09-04T00:00:00+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/2018-08-24-dimentionality-reduction-mnist/</loc>
-      
-        <lastmod>2018-08-24T00:00:00+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/2018-07-27-how-to-practice-interview-questions/</loc>
-      
-        <lastmod>2018-07-27T00:00:00+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/2018-07-10-tech-company-differences/</loc>
-      
-        <lastmod>2018-07-10T00:00:00+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/2018-06-28-how-to-crack-tech-interview/</loc>
-      
-        <lastmod>2018-06-28T00:00:00+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/2018-05-24-how-tech-interview-differ/</loc>
-      
-        <lastmod>2018-05-24T00:00:00+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/2018-04-26-is-start-up-right-for-you/</loc>
-      
-        <lastmod>2018-04-26T00:00:00+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-  
-    
-    <url>
-      <loc>http://localhost:4000/404.html</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/aboutme/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/projects/computer-vision/digit-recognition-using-cnn-%20in-python/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/projects/computer-vision/face-detection-using-opencv/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/feed.xml</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/projects/computer-vision/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/projects/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/projects/computer-vision/neural-style-transfer/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/projects/computer-vision/object-recognition-with-cnn/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/projects/computer-vision/predict-sentiment-using-imdbs-dataset/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/resource/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/tags/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/assets/css/style.css</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/page2/</loc>
-      
-        <lastmod>2018-11-15T20:19:44+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/2018-04-26-is-start-up-right-for-you/</loc>
+<lastmod>2018-04-26T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018-05-24-how-tech-interview-differ/</loc>
+<lastmod>2018-05-24T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018-06-28-how-to-crack-tech-interview/</loc>
+<lastmod>2018-06-28T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018-07-10-tech-company-differences/</loc>
+<lastmod>2018-07-10T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018-07-27-how-to-practice-interview-questions/</loc>
+<lastmod>2018-07-27T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018-08-24-dimentionality-reduction-mnist/</loc>
+<lastmod>2018-08-24T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018-09-04-eda-diabetes-dataset/</loc>
+<lastmod>2018-09-04T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018-09-09-statistics-for-machine-learning/</loc>
+<lastmod>2018-09-09T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018-10-04-ways-to-use-convnet/</loc>
+<lastmod>2018-10-04T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2018-10-20-crisp-dm/</loc>
+<lastmod>2018-10-20T00:00:00+05:30</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/aboutme/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/projects/computer-vision/digit-recognition-using-cnn-%20in-python/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/projects/computer-vision/face-detection-using-opencv/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/projects/computer-vision/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/projects/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/projects/computer-vision/neural-style-transfer/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/projects/computer-vision/object-recognition-with-cnn/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/projects/computer-vision/predict-sentiment-using-imdbs-dataset/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/resource/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tags/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
+</url>
 </urlset>
