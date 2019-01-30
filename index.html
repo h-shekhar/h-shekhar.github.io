@@ -1,18 +1,17 @@
 ---
 layout: page
-title: Applied Articles
-subtitle: A Data Science Blog
-use-site-title: true
+title: Himanshu Shekhar
+use-site-title: false
 css: "/css/list-filters.css"
 priority: 1.0
 ---
-
+<!---
 <div class="list-filters">
   <a href="/" class="list-filter filter-selected">All posts</a>
   <a href="/projects/computer-vision" class="list-filter">Computer Vision</a>
   <a href="/tags" class="list-filter">Index</a>
 </div>
-
+--->
 <div class="posts-list">
   {% for post in paginator.posts %}
   <article class="post-preview">
@@ -26,9 +25,11 @@ priority: 1.0
 	  {% endif %}
     </a>
 
+    <!---
     <p class="post-meta">
       Posted on {{ post.date | date: "%B %-d, %Y" }}
     </p>
+    --->
 
     <div class="post-entry-container">
       {% if post.image %}

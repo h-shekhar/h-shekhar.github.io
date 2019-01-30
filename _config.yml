@@ -4,7 +4,7 @@
 # baseurl is the website's URL without the hostname
 
 # If you are building a simple GitHub user page (http://username.github.io) then use these settings:
-url: "http://appliedarticles.github.io/"
+url: "http://h-shekhar.github.io/"
 baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
@@ -14,16 +14,16 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Applied Articles
+title: Himanshu Shekhar
 
 # Short description of your site
-description: A Data Science Blog
+#description: A Data Science Blog
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
-  Blog: 
+  Blog:
     - Tags: "tags"
     - Resources: "resource"
   Projects: "projects"
@@ -41,7 +41,7 @@ avatar: "/img/logo.jpeg"
 
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#06C8EA"
+navbar-col: "#F5F5F5"
 navbar-text-col: "#404040"
 navbar-children-col: "#F5F5F5"
 page-col: "#FFFFFF"
@@ -63,7 +63,7 @@ footer-link-col: "#404040"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Applied Articles
+  name: Himanshu Shekhar
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
@@ -73,7 +73,7 @@ social-network-links:
   rss: true
 #  email: "test@gmail.com"
   facebook: hshekhar0
-#github: 
+#github:
 #twitter: daattali
 #  reddit: yourname
 #  google-plus: +DeanAttali
@@ -98,7 +98,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-#url-pretty: "appliedarticles.com" 
+#url-pretty: "appliedarticles.com"
 
 # --- Web Statistics Section --- #
 
@@ -241,4 +241,3 @@ prose:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-
