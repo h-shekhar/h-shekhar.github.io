@@ -17,7 +17,7 @@ baseurl: ""
 title: Himanshu Shekhar
 
 # Short description of your site
-#description: A Data Science Blog
+#description:
 
 # --- Navigation bar options --- #
 
@@ -27,7 +27,7 @@ navbar-links:
     - Tags: "tags"
     - Resources: "resource"
   Projects: "projects"
-  About Me: "aboutme"
+  About: "aboutme"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -98,15 +98,15 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-#url-pretty: "appliedarticles.com"
+#url-pretty: "hshekhar.in"
 
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics gtag.js ID to track your website using gtag
-#gtag: ""
+gtag: "UA-133548690-1"
 
 # Fill in your Google Analytics ID to track your website using GA
-google_analytics: "UA-127947870-1"
+google_analytics: "UA-133548690-1"
 
 # Google Tag Manager ID
 #gtm: ""
