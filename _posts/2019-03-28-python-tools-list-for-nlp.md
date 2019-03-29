@@ -4,6 +4,7 @@ title: Python Tools List for Natural Language Processing (NLP)
 subtitle: Natural Language Analysis with NLP libraries
 tags: [nlp, nltk, python]
 category: NLP
+share-img: /img/2019/nlp2.png
 ---
 
 ![Plot](/img/2019/nlp.jpg){:class="img-responsive"}
