@@ -5,9 +5,8 @@ subtitle: Natural Language Analysis with NLP libraries
 tags: [nlp, nltk, python]
 category: NLP
 share-img: /img/2019/nlp2.png
+image: /img/2019/nlp.jpg
 ---
-
-![Plot](/img/2019/nlp.jpg){:class="img-responsive"}
 
 Natural language processing (NLP) is an exciting field in data science and artificial intelligence that deals with teaching computers how to extract meaning from text. In this guide, we’ll be touring the essential stack of Python NLP libraries. These packages handle a wide range of tasks such as part-of-speech (POS) tagging, sentiment analysis, document classification, topic modeling, and much more.
 
