@@ -2,7 +2,7 @@
   
     {
       "title"    : "Python Tools List for Natural Language Processing",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "nlp, nltk, python",
       "url"      : "/python-tools-list-for-nlp/",
       "date"     : "2019-05-16 00:00:00 +0530"
@@ -10,7 +10,7 @@
   
     {
       "title"    : "Demystifying Quantum Machine Learning",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "quantum, machine learning",
       "url"      : "/demystifying-quantum-machine-learning/",
       "date"     : "2019-05-02 00:00:00 +0530"
@@ -18,7 +18,7 @@
   
     {
       "title"    : "CRoss-Industry Standard Process for Data Mining",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "data mining, crisp-dm",
       "url"      : "/crisp-dm/",
       "date"     : "2018-10-20 00:00:00 +0530"
@@ -26,7 +26,7 @@
   
     {
       "title"    : "How to use ConvNets in different ways - a brief analogy",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "deep learning, python, cnn",
       "url"      : "/ways-to-use-convnet/",
       "date"     : "2018-10-04 00:00:00 +0530"
@@ -34,7 +34,7 @@
   
     {
       "title"    : "Statistics &amp; Visualization for Machine Learning",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "machine learning, python, statistics, visualization",
       "url"      : "/statistics-for-machine-learning/",
       "date"     : "2018-09-09 00:00:00 +0530"
@@ -42,7 +42,7 @@
   
     {
       "title"    : "Pima Indians onset of Diabetes dataset",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "machine learning, python",
       "url"      : "/eda-diabetes-dataset/",
       "date"     : "2018-09-04 00:00:00 +0530"
@@ -50,7 +50,7 @@
   
     {
       "title"    : "Expounding Dimensionality Reduction using PCA and t-SNE",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "machine learning, python",
       "url"      : "/dimentionality-reduction-mnist/",
       "date"     : "2018-08-24 00:00:00 +0530"
@@ -58,7 +58,7 @@
   
     {
       "title"    : "How to practice the interview questions",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "interview questions",
       "url"      : "/how-to-practice-interview-questions/",
       "date"     : "2018-07-27 00:00:00 +0530"
@@ -66,7 +66,7 @@
   
     {
       "title"    : "The Differences",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "career, tech company",
       "url"      : "/tech-company-differences/",
       "date"     : "2018-07-10 00:00:00 +0530"
@@ -74,7 +74,7 @@
   
     {
       "title"    : "How to crack the tech interview",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "algorithm, coding interview, tech interview",
       "url"      : "/how-to-crack-tech-interview/",
       "date"     : "2018-06-28 00:00:00 +0530"
@@ -82,55 +82,15 @@
   
     {
       "title"    : "How tech interview differ",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "career, tech interview",
       "url"      : "/how-tech-interview-differ/",
       "date"     : "2018-05-24 00:00:00 +0530"
     } ,
   
     {
-      "title"    : "Predict Sentiment From Movie Reviews Using IMDBs Dataset",
-      "category" : "",
-      "tags"     : "",
-      "url"      : "/predict-sentiment-using-imdbs-dataset/",
-      "date"     : "2018-05-23 00:00:00 +0530"
-    } ,
-  
-    {
-      "title"    : "Object Recognition with ConvNets in Python with Keras",
-      "category" : "",
-      "tags"     : "",
-      "url"      : "/object-recognition-with-cnn/",
-      "date"     : "2018-05-23 00:00:00 +0530"
-    } ,
-  
-    {
-      "title"    : "Neural Artistic Style Transfer using Tensorflow",
-      "category" : "",
-      "tags"     : "",
-      "url"      : "/neural-style-transfer/",
-      "date"     : "2018-05-23 00:00:00 +0530"
-    } ,
-  
-    {
-      "title"    : "Face Detection using OpenCV",
-      "category" : "",
-      "tags"     : "",
-      "url"      : "/face-detection-using-opencv/",
-      "date"     : "2018-05-23 00:00:00 +0530"
-    } ,
-  
-    {
-      "title"    : "Digit Recognition using ConvNets in Python with Keras",
-      "category" : "",
-      "tags"     : "",
-      "url"      : "/digit-recognition-using-cnn-in-python/",
-      "date"     : "2018-05-23 00:00:00 +0530"
-    } ,
-  
-    {
       "title"    : "Is a Start-Up right for You?",
-      "category" : "blog",
+      "category" : "",
       "tags"     : "career, start up, tech company",
       "url"      : "/is-start-up-right-for-you0/",
       "date"     : "2018-04-26 00:00:00 +0530"

@@ -5,7 +5,8 @@ permalink: /projects/
 ---
 
 <ol class="post-card-box clearfix">
-  {% for post in site.categories.project %}
+  {% for post in site.pages %}
+  {% if post.categories == 'project' %}
   <li>
     <div class="post-card">
       <a href="{{post.url | prepend: site.baseurl}}" class="post-card-image" style="background-image: url( {{ "/assets/img/" | prepend: site.baseurl | append : post.img}} )">
@@ -20,5 +21,6 @@ permalink: /projects/
 
     </div>
   </li>
+  {% endif %}
   {% endfor %}
 </ol>

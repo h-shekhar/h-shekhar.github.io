@@ -4,6 +4,7 @@ title: Object Recognition with ConvNets in Python with Keras
 type: computer-vision
 comments: true
 categories: project
+tags: [CNN]
 img: objr.jpg
 ---
 
@@ -197,5 +198,4 @@ print("Accuracy: %.2f%%" % (scores[1]*100))
 ```
 
 
-_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
-{: .box-warning}
+> _In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._

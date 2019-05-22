@@ -4,6 +4,7 @@ title: Face Detection using OpenCV
 type: computer-vision
 comments: true
 categories: project
+tags: [CNN]
 img: fac.jpg
 ---
 
@@ -241,5 +242,4 @@ ax2.imshow(convertToRGB(lbp_detected_img))
 - ***Speed***: _LBP_ was significantly faster than _HAAR_.
 
 
-_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
-{: .box-warning}
+> _In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._

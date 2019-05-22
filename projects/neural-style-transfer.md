@@ -4,6 +4,7 @@ title: Neural Artistic Style Transfer using Tensorflow
 type: computer-vision
 comments: true
 categories: project
+tags: [CNN]
 img: art.jpg
 ---
 
@@ -217,5 +218,4 @@ This comes the final output.
 - To run the code in google colab refer [here](https://colab.research.google.com/github/tensorflow/models/blob/master/research/nst_blogpost/4_Neural_Style_Transfer_with_Eager_Execution.ipynb)
 - https://arxiv.org/pdf/1508.06576.pdf
 
-_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
-{: .box-warning}
+> _In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._

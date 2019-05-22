@@ -3,7 +3,7 @@ layout: post
 title: Pima Indians onset of Diabetes dataset
 subtitle: Exploratory Data Analysis
 tags: [machine learning, python]
-category: blog
+categories: blog
 img: diab.jpg
 ---
 
@@ -199,5 +199,4 @@ print(result)
 {: .box-note}
 
 
-_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
-{: .box-warning}
+> _In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._

@@ -3,7 +3,7 @@ layout: post
 title: How to practice the interview questions
 subtitle: Seven Step Approach
 tags: [interview questions]
-category: blog
+categories: blog
 img: inter.jpg
 ---
 
@@ -20,5 +20,4 @@ Take your time-solving problems, and try the following seven-step approach in pr
 7. Start a list of all the mistakes you made, and analyze what types of mistakes you make the most often. Are these specific mistakes?
 
 
-_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
-{: .box-warning}
+> _In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._

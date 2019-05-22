@@ -3,7 +3,7 @@ layout: home-page
 title: Resources
 permalink: /resources/
 ---
-***Links***
+## **Links and Utilities**
 - [Neuralnetworks and deeplearning](http://neuralnetworksanddeeplearning.com/)
 - [Neural Network Playground](http://playground.tensorflow.org/)
 - [Gradient Descent](http://ruder.io/optimizing-gradient-descent/)
@@ -16,7 +16,7 @@ permalink: /resources/
 
 ----
 
-***Blogs***
+## **Blogs**
 - [The Keras Blog](https://blog.keras.io/)
 - [Andrej Karpathy](http://karpathy.github.io/)
 - [Christopher Olah Blog](http://colah.github.io/)

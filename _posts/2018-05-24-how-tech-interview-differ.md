@@ -3,7 +3,7 @@ layout: post
 title: How tech interview differ
 subtitle: Microsoft, Google, Facebook, Amazon, and Apple
 tags: [career, tech interview]
-category: blog
+categories: blog
 img: ques.jpg
 ---
 
@@ -24,5 +24,4 @@ However, certain companies have minor slants toward particular types of question
 A good rule of thumb is to look at the position and the company. If it’s a web-based company, team, or role, you should expect some scalability questions. If it’s a front-end position, expect some front-end questions. But for almost all companies, expect algorithm and problem-solving questions.
 
 
-_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
-{: .box-warning}
+> _In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._

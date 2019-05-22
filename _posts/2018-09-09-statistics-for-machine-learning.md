@@ -3,7 +3,7 @@ layout: post
 title: Statistics & Visualization for Machine Learning
 subtitle: Hands-on guide to statistics & visualization techniques
 tags: [machine learning, python, statistics, visualization]
-category: blog
+categories: blog
 img: viz.jpg
 ---
 
@@ -360,5 +360,4 @@ train: [0.1 0.2 0.3 0.5], test: [0.4 0.6]
 {: .box-note}
 
 
-_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
-{: .box-warning}
+> _In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._

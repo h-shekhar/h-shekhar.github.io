@@ -1,72 +1,412 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>http://localhost:4000/is-start-up-right-for-you0/</loc>
-<lastmod>2018-04-26T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/digit-recognition-using-cnn-in-python/</loc>
-<lastmod>2018-05-23T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/face-detection-using-opencv/</loc>
-<lastmod>2018-05-23T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/neural-style-transfer/</loc>
-<lastmod>2018-05-23T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/object-recognition-with-cnn/</loc>
-<lastmod>2018-05-23T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/predict-sentiment-using-imdbs-dataset/</loc>
-<lastmod>2018-05-23T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/how-tech-interview-differ/</loc>
-<lastmod>2018-05-24T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/how-to-crack-tech-interview/</loc>
-<lastmod>2018-06-28T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/tech-company-differences/</loc>
-<lastmod>2018-07-10T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/how-to-practice-interview-questions/</loc>
-<lastmod>2018-07-27T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/eda-diabetes-dataset/</loc>
-<lastmod>2018-09-04T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/statistics-for-machine-learning/</loc>
-<lastmod>2018-09-09T00:00:00+05:30</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/about/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/projects/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/resources/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/tags/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/page2/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/page3/</loc>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+    
+    <url>
+      <loc>http://localhost:4000/python-tools-list-for-nlp/</loc>
+      
+        <lastmod>2019-05-16T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/demystifying-quantum-machine-learning/</loc>
+      
+        <lastmod>2019-05-02T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/crisp-dm/</loc>
+      
+        <lastmod>2018-10-20T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/ways-to-use-convnet/</loc>
+      
+        <lastmod>2018-10-04T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/statistics-for-machine-learning/</loc>
+      
+        <lastmod>2018-09-09T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/eda-diabetes-dataset/</loc>
+      
+        <lastmod>2018-09-04T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/dimentionality-reduction-mnist/</loc>
+      
+        <lastmod>2018-08-24T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/how-to-practice-interview-questions/</loc>
+      
+        <lastmod>2018-07-27T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/tech-company-differences/</loc>
+      
+        <lastmod>2018-07-10T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/how-to-crack-tech-interview/</loc>
+      
+        <lastmod>2018-06-28T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/how-tech-interview-differ/</loc>
+      
+        <lastmod>2018-05-24T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/is-start-up-right-for-you0/</loc>
+      
+        <lastmod>2018-04-26T00:00:00+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+  
+    
+    <url>
+      <loc>http://localhost:4000/about/</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/projects/digit-recognition-using-cnn-%20in-python/</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/projects/face-detection-using-opencv/</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/projects/neural-style-transfer/</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/projects/object-recognition-with-cnn/</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/projects/predict-sentiment-using-imdbs-dataset/</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/projects/</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/resources/</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/search.json</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/tags/</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/redirects.json</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/page2/</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/feed.xml</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/robots.txt</loc>
+      
+        <lastmod>2019-05-22T16:01:06+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
 </urlset>

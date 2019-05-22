@@ -2,7 +2,7 @@
 layout: post
 title: Is a Start-Up right for You?
 tags: [career, start up, tech company]
-category: blog
+categories: blog
 img: start.jpg
 ---
 
@@ -33,5 +33,4 @@ Start-up burnout is a very real thing. Sure, you may be passionate about your ne
 Some people love start-ups. The speed. The innovation. The risk. The learning as you go. The impact. For as much as start-ups are glorified though, it’s also reasonable to decide that they’re not for you, or to at least have mixed feelings. When you are joining a start-up, you’re rolling the dice. Things tend to get messy. It’s going to be a bumpy ride. People joining start-ups should be mentally prepared for this constant change.
 
 
-_In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
-{: .box-warning}
+> _In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
