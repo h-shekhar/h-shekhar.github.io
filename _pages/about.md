@@ -48,7 +48,7 @@ permalink: /about/
       {% endif %}
 
       {% if site.github %}
-        <li class="github"><a href="http://medium.com/@hshekhar.in{{site.github}}" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li class="github"><a href="http://medium.com/@hshekhar.in{{site.github}}" target="_blank"><i class="fa fa-medium"></i></a></li>
       {% else %}
         <li class="github"><a href="http://medium.com/@hshekhar.in" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a></li>
       {% endif %}
