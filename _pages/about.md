@@ -47,10 +47,10 @@ permalink: /about/
         <li class="facebook"><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
       {% endif %}
 
-      {% if site.github %}
-        <li class="github"><a href="http://medium.com/@hshekhar.in{{site.github}}" target="_blank"><i class="fa fa-medium"></i></a></li>
+      {% if site.medium %}
+        <li class="medium"><a href="http://medium.com/@hshekhar.in{{site.medium}}" target="_blank"><i class="fa fa-medium"></i></a></li>
       {% else %}
-        <li class="github"><a href="http://medium.com/@hshekhar.in" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a></li>
+        <li class="medium"><a href="http://medium.com/@hshekhar.in" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a></li>
       {% endif %}
 
       </ul>
