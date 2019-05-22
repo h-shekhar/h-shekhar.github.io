@@ -3,6 +3,8 @@ layout: post
 title: How tech interview differ
 subtitle: Microsoft, Google, Facebook, Amazon, and Apple
 tags: [career, tech interview]
+category: blog
+img: ques.jpg
 ---
 
 For the most part, the top tech companies are far more similar than different. There really aren’t “Google interview questions” or “Microsoft interview questions.” Each interviewer decides on his or her own questions, and almost any question asked at one company would fit in just as well at any of the other companies.

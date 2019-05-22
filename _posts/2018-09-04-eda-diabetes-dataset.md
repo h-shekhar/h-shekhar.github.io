@@ -3,6 +3,8 @@ layout: post
 title: Pima Indians onset of Diabetes dataset
 subtitle: Exploratory Data Analysis
 tags: [machine learning, python]
+category: blog
+img: diab.jpg
 ---
 
 ## Context:
@@ -41,13 +43,13 @@ from pandas.plotting import scatter_matrix
 scatter_matrix(data)
 plt.show()
 ```
-![Plot](/img/2018/09/diabetes.png){:class="img-responsive"}
+![Plot](/assets/img/diabetes.png){:class="img-responsive"}
 
 ### Preprocessing Data using Standardization  
 
 ```python
 # Standardize the data(mean=0, std-dev=1)
-from sklearn.preprocessing import StandardScaler 
+from sklearn.preprocessing import StandardScaler
 import numpy
 array = data.values
 # separate array into input and output components
@@ -185,9 +187,9 @@ model.fit(X_train, Y_train)
 # save the model to disk
 filename = 'finalized_model.sav'
 pickle.dump(model, open(filename, 'wb'))
- 
+
 # some time later...
- 
+
 # load the model from disk
 loaded_model = pickle.load(open(filename, 'rb'))
 result = loaded_model.score(X_test, Y_test)

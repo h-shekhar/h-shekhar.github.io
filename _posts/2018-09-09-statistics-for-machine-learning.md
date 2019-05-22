@@ -3,7 +3,8 @@ layout: post
 title: Statistics & Visualization for Machine Learning
 subtitle: Hands-on guide to statistics & visualization techniques
 tags: [machine learning, python, statistics, visualization]
-category: Machine Learning
+category: blog
+img: viz.jpg
 ---
 
 ## Table of Content
@@ -213,7 +214,7 @@ pyplot.plot(x, y)
 # show line plot
 pyplot.show()
 ```
-![Plot](/img/2018/09/line.png){:class="img-responsive"}
+![Plot](/assets/img/line.png){:class="img-responsive"}
 
 ### Bar Chart
 A bar chart is generally used to present relative quantities for multiple categories.
@@ -238,7 +239,7 @@ pyplot.bar(x, y)
 # show line plot
 pyplot.show()
 ```
-![Plot](/img/2018/09/bar.png){:class="img-responsive"}
+![Plot](/assets/img/bar.png){:class="img-responsive"}
 
 ### Histogram Plot
 A histogram plot is generally used to summarize the distribution of a data sample.
@@ -263,7 +264,7 @@ pyplot.hist(x)
 # show line plot
 pyplot.show()
 ```
-![Plot](/img/2018/09/histogram.png){:class="img-responsive"}
+![Plot](/assets/img/histogram.png){:class="img-responsive"}
 
 ### Box and Whisker Plot
 A box and whisker plot, or boxplot for short, is generally used to summarize the distribution of a data sample. Boxplots are useful to summarize the distribution of a data sample as an alternative to the histogram. This method is often used when the data has an unknown or unusual distribution, such as non-Gaussian.
@@ -286,7 +287,7 @@ pyplot.boxplot(x)
 # show line plot
 pyplot.show()
 ```
-![Plot](/img/2018/09/box.png){:class="img-responsive"}
+![Plot](/assets/img/box.png){:class="img-responsive"}
 
 ### Scatter Plot
 A scatter plot (or ‘scatterplot’) is generally used to summarize the relationship between two paired data samples.
@@ -311,7 +312,7 @@ pyplot.scatter(x, y)
 # show line plot
 pyplot.show()
 ```
-![Plot](/img/2018/09/scatter.png){:class="img-responsive"}
+![Plot](/assets/img/scatter.png){:class="img-responsive"}
 
 ## [4]. Resampling Methods
 ### Bootstrap Method

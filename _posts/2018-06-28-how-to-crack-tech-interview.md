@@ -3,6 +3,8 @@ layout: post
 title: How to crack the tech interview
 subtitle: Seven Step Approach
 tags: [algorithm, coding interview, tech interview]
+category: blog
+img: code.jpg
 ---
 
 Interviews are supposed to be difficult. The norm is that you won’t know how to solve a question as soon as you hear it. You will struggle through it, get a bit of help from the interviewer, and arrive at a better solution than what you started with.
@@ -117,4 +119,3 @@ Bugs are not a big deal. The important thing is that you think through how to fi
 
 _In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
 {: .box-warning}
-

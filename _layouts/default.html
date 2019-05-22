@@ -1,9 +1,9 @@
----
-layout: base
----
-
-<div class="intro-header"></div>
-
-<div role="main" class="container">
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
   {{ content }}
-</div>
+  {% include javascripts.html %}
+  {% include analytics.html %}
+</body>
+</html>

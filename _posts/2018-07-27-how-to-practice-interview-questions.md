@@ -3,6 +3,8 @@ layout: post
 title: How to practice the interview questions
 subtitle: Seven Step Approach
 tags: [interview questions]
+category: blog
+img: inter.jpg
 ---
 
 When it comes to practicing interview questions, quality matters more than quantity. There are literally thousands of sample interview questions online for companies like Google, Microsoft, and Amazon. Don’t try to memorize the answers. It’s impossible and won’t help you anyway.

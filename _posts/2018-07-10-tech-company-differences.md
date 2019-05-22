@@ -3,6 +3,8 @@ layout: post
 title: The Differences
 subtitle: Top tech company
 tags: [career, tech company]
+category: blog
+img: tech.jpg
 ---
 
 Cultural differences between companies can often be traced back to the company’s roots.

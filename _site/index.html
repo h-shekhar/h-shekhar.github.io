@@ -1,570 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
-
-  <title>Applied Articles - A Data Science Blog</title>
-
-  <meta name="author" content="Applied Articles" />
-
-  
-  <meta name="description" content="A Data Science Blog">
-  
-
-  <link rel="alternate" type="application/rss+xml" title="Applied Articles - A Data Science Blog" href="/feed.xml" />
-
-  
-
-  
-
-  
-    
-      
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
-
-    
-  
-
-  
-    
-      <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    
-      <link rel="stylesheet" href="/css/bootstrap-social.css" />
-    
-      <link rel="stylesheet" href="/css/main.css" />
-    
-  
-
-  
-    
-      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-    
-      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-    
-  
-
-  
-
-  
-    
-      <link rel="stylesheet" href="/css/list-filters.css" />
-    
-  
-
-  
-
-    <!-- Facebook OpenGraph tags -->
-  
-
-  
-  <meta property="og:title" content="Applied Articles" />
-  
-
-   
-  <meta property="og:description" content="A Data Science Blog">
-  
-
-
-  <meta property="og:type" content="website" />
-
-  
-  <meta property="og:url" content="http://localhost:4000/" />
-  <link rel="canonical" href="http://localhost:4000/" />
-  
-
-  
-  <meta property="og:image" content="http://localhost:4000/img/logo.jpeg" />
-  
-
-
-  <!-- Twitter summary cards -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@" />
-  <meta name="twitter:creator" content="@" />
-
-  
-  <meta name="twitter:title" content="Applied Articles" />
-  
-
-  
-  <meta name="twitter:description" content="A Data Science Blog">
-  
-
-  
-  <meta name="twitter:image" content="http://localhost:4000/img/logo.jpeg" />
-  
-
-  
-
+<head>
+	<meta charset="utf-8">
+	<title>Himanshu Shekhar</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#311e3e">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#311e3e">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
+<body>
+  <div class="flex-container">
+  <header class="main-header">
+  <div class="wrapper">
+    <div class="header-flex">
+      <div class="menu-icon-container">
+        <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </div>
+      <nav class="main-nav">
+        <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/resources">Resources</a></li>
 
-  <body>
-
-    
-  
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-        <a class="navbar-brand" href="http://localhost:4000">Applied Articles</a>
-      
-    </div>
-
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
-      
-        
-          <li class="navlinks-container">
-            <a class="navlinks-parent" href="javascript:void(0)">Blog</a>
-            <div class="navlinks-children">
-              
-                
-                  
-
-
-
-
-
-
-<a href="/tags">Tags</a>
-
-                
-              
-                
-                  
-
-
-
-
-
-
-<a href="/resource">Resources</a>
-
-                
-              
-            </div>
-          </li>
-        
-        
-        
-          <li>
-            
-
-
-
-
-
-
-<a href="/projects">Projects</a>
-
-          </li>
-        
-        
-        
-          <li>
-            
-
-
-
-
-
-
-<a href="/aboutme">About Me</a>
-
-          </li>
-        
-        
-      </ul>
-    </div>
-
-	
-	<div class="avatar-container">
-	  <div class="avatar-img-border">
-	    <a href="http://localhost:4000 ">
-	      <img class="avatar-img" src="/img/logo.jpeg" />
-		</a>
-	  </div>
-	</div>
-	
-
-  </div>
-</nav>
-
-
-    <!-- TODO this file has become a mess, refactor it -->
-
-
-
-
-
-<header class="header-section ">
-
-<div class="intro-header no-img">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-heading">
-          <h1>Applied Articles</h1>
-		  
-		    
-            <hr class="small">
-            <span class="page-subheading">A Data Science Blog</span>
-			
-		  
-		  
-		  
-        </div>
+        </ul>
+      </nav>
+      <p class="logo"><a href="/">Himanshu Shekhar</a></p>
+      <div class="search-icon-container">
+        <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
       </div>
     </div>
   </div>
-</div>
-</header>
+</header> <!-- End Header -->
 
-
-
-
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <div class="list-filters">
-  <a href="/" class="list-filter filter-selected">All posts</a>
-  <a href="/projects/computer-vision" class="list-filter">Computer Vision</a>
-  <a href="/tags" class="list-filter">Index</a>
-</div>
-
-<div class="posts-list">
+  <div class="content wrapper">
+    <ol class="post-card-box clearfix">
   
-  <article class="post-preview">
-    <a href="/2018-10-20-crisp-dm/">
-	  <h2 class="post-title">CRoss-Industry Standard Process for Data Mining</h2>
+  <li>
+    <div class="post-card">
+      <a href="/python-tools-list-for-nlp/" class="post-card-image" style="background-image: url( /assets/img/nlp.png )">
+      </a>
 
-	  
-	  <h3 class="post-subtitle">
-	    A gentle introduction to CRISP-DM
-	  </h3>
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on October 20, 2018
-    </p>
-
-    <div class="post-entry-container">
-      
-      <div class="post-entry">
-        Introduction
-CRISP-DM was conceived in late 1996 by three veterans of the young and immature data mining market. CRISP stands for “CRoss-Industry Standard Process for Data Mining.”
-
-
+      <div class="post-card-body">
         
+        <a href="/tags#nlp" class="tag">|&#32;nlp</a>
         
-          <a href="/2018-10-20-crisp-dm/" class="post-read-more">[Read&nbsp;More]</a>
+        <a href="/tags#nltk" class="tag">|&#32;nltk</a>
         
+        <a href="/tags#python" class="tag">|&#32;python</a>
+        
+        <a href="/python-tools-list-for-nlp/" class="post-card-link"><h3 class="post-card-title">Python Tools List for Natural Language Processing</h3></a>
       </div>
+
     </div>
-
-    
-    <div class="blog-tags">
-      Tags:
-      
-      
-      <a href="/tags#data mining">data mining</a>
-      
-      <a href="/tags#crisp-dm">crisp-dm</a>
-      
-      
-    </div>
-    
-
-   </article>
-  
-  <article class="post-preview">
-    <a href="/2018-10-04-ways-to-use-convnet/">
-	  <h2 class="post-title">How to use ConvNets in different ways</h2>
-
-	  
-	  <h3 class="post-subtitle">
-	    CNN
-	  </h3>
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on October 4, 2018
-    </p>
-
-    <div class="post-entry-container">
-      
-      <div class="post-entry">
-        There are several ways we can use Convolutional Neural Network (CNN or ConvNets for short) for building a deep learning model. Some are computationally cheaper while some require deeper understanding of the underlying architecture. Each has their own advantages. Let’s dive in to find out.
-
-
-        
-        
-          <a href="/2018-10-04-ways-to-use-convnet/" class="post-read-more">[Read&nbsp;More]</a>
-        
-      </div>
-    </div>
-
-    
-    <div class="blog-tags">
-      Tags:
-      
-      
-      <a href="/tags#deep learning">deep learning</a>
-      
-      <a href="/tags#python">python</a>
-      
-      <a href="/tags#cnn">cnn</a>
-      
-      
-    </div>
-    
-
-   </article>
-  
-  <article class="post-preview">
-    <a href="/2018-09-09-statistics-for-machine-learning/">
-	  <h2 class="post-title">Statistics & Visualization for Machine Learning</h2>
-
-	  
-	  <h3 class="post-subtitle">
-	    Hands-on guide to statistics & visualization techniques
-	  </h3>
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on September 9, 2018
-    </p>
-
-    <div class="post-entry-container">
-      
-      <div class="post-entry">
-        Table of Content Statistics for Machine Learning 1. Gaussian Distribution and Descriptive Stats 2. Correlation Between Variables 3. Statistical Hypothesis Tests 4. Estimation Statistics 5. Nonparametric Statistics How to Calculate the 5-Number Summary in Python Data Visualization Methods in Python 1. Line Plot 2. Bar Chart 3. Histogram Plot 4....
-        
-        
-          <a href="/2018-09-09-statistics-for-machine-learning/" class="post-read-more">[Read&nbsp;More]</a>
-        
-      </div>
-    </div>
-
-    
-    <div class="blog-tags">
-      Tags:
-      
-      
-      <a href="/tags#machine learning">machine learning</a>
-      
-      <a href="/tags#python">python</a>
-      
-      <a href="/tags#statistics">statistics</a>
-      
-      <a href="/tags#visualization">visualization</a>
-      
-      
-    </div>
-    
-
-   </article>
-  
-  <article class="post-preview">
-    <a href="/2018-09-04-eda-diabetes-dataset/">
-	  <h2 class="post-title">Pima Indians onset of Diabetes dataset</h2>
-
-	  
-	  <h3 class="post-subtitle">
-	    Exploratory Data Analysis
-	  </h3>
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on September 4, 2018
-    </p>
-
-    <div class="post-entry-container">
-      
-      <div class="post-entry">
-        Context: This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The objective of the dataset is to diagnostically predict whether or not a patient has diabetes, based on certain diagnostic measurements included in the dataset. Several constraints were placed on the selection of these...
-        
-        
-          <a href="/2018-09-04-eda-diabetes-dataset/" class="post-read-more">[Read&nbsp;More]</a>
-        
-      </div>
-    </div>
-
-    
-    <div class="blog-tags">
-      Tags:
-      
-      
-      <a href="/tags#machine learning">machine learning</a>
-      
-      <a href="/tags#python">python</a>
-      
-      
-    </div>
-    
-
-   </article>
-  
-  <article class="post-preview">
-    <a href="/2018-08-24-dimentionality-reduction-mnist/">
-	  <h2 class="post-title">Dimentionality Reduction using MNIST data set</h2>
-
-	  
-	  <h3 class="post-subtitle">
-	    PCA, t-SNE
-	  </h3>
-	  
-    </a>
-
-    <p class="post-meta">
-      Posted on August 24, 2018
-    </p>
-
-    <div class="post-entry-container">
-      
-      <div class="post-entry">
-        What is Dimensionality Reduction? In machine learning, dimensionality reduction is the process of converting any data which is present in a higher dimension to somewhat lower dimension by preserving the underlying information concisely. We often apply a bunch of dimensionality reduction technique to better visualize our data. But that is...
-        
-        
-          <a href="/2018-08-24-dimentionality-reduction-mnist/" class="post-read-more">[Read&nbsp;More]</a>
-        
-      </div>
-    </div>
-
-    
-    <div class="blog-tags">
-      Tags:
-      
-      
-      <a href="/tags#machine learning">machine learning</a>
-      
-      <a href="/tags#python">python</a>
-      
-      
-    </div>
-    
-
-   </article>
-  
-</div>
-
-
-<ul class="pager main-pager">
-  
-  
-  <li class="next">
-    <a href="/page2">Older Posts &rarr;</a>
   </li>
   
-</ul>
+  <li>
+    <div class="post-card">
+      <a href="/demystifying-quantum-machine-learning/" class="post-card-image" style="background-image: url( /assets/img/qml.jpg )">
+      </a>
 
+      <div class="post-card-body">
+        
+        <a href="/tags#quantum" class="tag">|&#32;quantum</a>
+        
+        <a href="/tags#machine learning" class="tag">|&#32;machine learning</a>
+        
+        <a href="/demystifying-quantum-machine-learning/" class="post-card-link"><h3 class="post-card-title">Demystifying Quantum Machine Learning</h3></a>
+      </div>
 
-	    
+    </div>
+  </li>
+  
+  <li>
+    <div class="post-card">
+      <a href="/crisp-dm/" class="post-card-image" style="background-image: url( /assets/img/crisp.jpg )">
+      </a>
+
+      <div class="post-card-body">
+        
+        <a href="/tags#data mining" class="tag">|&#32;data mining</a>
+        
+        <a href="/tags#crisp-dm" class="tag">|&#32;crisp-dm</a>
+        
+        <a href="/crisp-dm/" class="post-card-link"><h3 class="post-card-title">CRoss-Industry Standard Process for Data Mining</h3></a>
+      </div>
+
+    </div>
+  </li>
+  
+  <li>
+    <div class="post-card">
+      <a href="/ways-to-use-convnet/" class="post-card-image" style="background-image: url( /assets/img/cnn.png )">
+      </a>
+
+      <div class="post-card-body">
+        
+        <a href="/tags#deep learning" class="tag">|&#32;deep learning</a>
+        
+        <a href="/tags#python" class="tag">|&#32;python</a>
+        
+        <a href="/tags#cnn" class="tag">|&#32;cnn</a>
+        
+        <a href="/ways-to-use-convnet/" class="post-card-link"><h3 class="post-card-title">How to use ConvNets in different ways - a brief analogy</h3></a>
+      </div>
+
+    </div>
+  </li>
+  
+  <li>
+    <div class="post-card">
+      <a href="/statistics-for-machine-learning/" class="post-card-image" style="background-image: url( /assets/img/viz.jpg )">
+      </a>
+
+      <div class="post-card-body">
+        
+        <a href="/tags#machine learning" class="tag">|&#32;machine learning</a>
+        
+        <a href="/tags#python" class="tag">|&#32;python</a>
+        
+        <a href="/tags#statistics" class="tag">|&#32;statistics</a>
+        
+        <a href="/tags#visualization" class="tag">|&#32;visualization</a>
+        
+        <a href="/statistics-for-machine-learning/" class="post-card-link"><h3 class="post-card-title">Statistics & Visualization for Machine Learning</h3></a>
+      </div>
+
+    </div>
+  </li>
+  
+  <li>
+    <div class="post-card">
+      <a href="/eda-diabetes-dataset/" class="post-card-image" style="background-image: url( /assets/img/diab.jpg )">
+      </a>
+
+      <div class="post-card-body">
+        
+        <a href="/tags#machine learning" class="tag">|&#32;machine learning</a>
+        
+        <a href="/tags#python" class="tag">|&#32;python</a>
+        
+        <a href="/eda-diabetes-dataset/" class="post-card-link"><h3 class="post-card-title">Pima Indians onset of Diabetes dataset</h3></a>
+      </div>
+
+    </div>
+  </li>
+  
+</ol>
+
+  <div class="search-box">
+  <div class="wrapper">
+    <div class="search-grid">
+      <form class="search-form">
+        <div id="search-container">
+          <input type="text" id="search-input" class="search" placeholder="Search">
+        </div>
+      </form>
+      <ul id="results-container" class="results-search"></ul>
+      <div class="icon-close-container">
+        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
     </div>
   </div>
 </div>
 
+  <div class="pagination clearfix">
+  
+  
+    <a href="/page2/" class="next">Next <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+  
+</div>
 
-    <footer>
-  <div class="container beautiful-jekyll-footer">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links"><li><a href="/feed.xml" title="RSS"><span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">RSS</span>
-              </a>
-            </li><li><a href="https://www.facebook.com/hshekhar0" title="Facebook"><span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">Facebook</span>
-              </a>
-            </li><li><a href="https://linkedin.com/in/hshekhar20" title="LinkedIn"><span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">LinkedIn</span>
-              </a>
-            </li></ul>
-      <p class="copyright text-muted">
-      Applied Articles
-      &nbsp;&bull;&nbsp;
-      2018
-
-      
-
-      
-      </p>
-          <!-- Please don't remove this, keep my open source work credited :) 
-    <p class="theme-by text-muted">
-      Theme by
-      <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
-    </p> 
-    <p class="theme-by text-muted">Code with <span style="font-size:120%;color:red;">&hearts;</span> in India</p>-->
-      </div>
-    </div>
+  </div> <!-- End Wrapper -->
+  <footer class="main-footer">
+  <div class="copyright">
+    <p>2019 &copy; Himanshu Shekhar</p>
   </div>
-</footer>
+</footer> <!-- End Footer -->
 
-  
-    
+</div>
 
+  <!-- JS -->
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/jekyll-search.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+</script>
+<script src="/assets/js/main.js"></script>
 
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
 
-
-
-
-  
-    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
-    
-      <script>
-      	if (typeof jQuery == 'undefined') {
-      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
-      	}
-      </script>
-    
-  
-    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
-    
-	<script src="/js/bootstrap.min.js"></script>
-    
-  
-    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
-    
-	<script src="/js/main.js"></script>
-    
-  
-
-
-
-	<!-- Google Analytics -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-127947870-1', 'auto');
-		ga('send', 'pageview');
-	</script>
-	<!-- End Google Analytics -->
-
-
-  
-  </body>
+</body>
 </html>

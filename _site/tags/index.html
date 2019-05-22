@@ -1,504 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
-
-  <title>Tag Index</title>
-
-  <meta name="author" content="Applied Articles" />
-
-  
-
-  <link rel="alternate" type="application/rss+xml" title="Applied Articles - A Data Science Blog" href="/feed.xml" />
-
-  
-
-  
-
-  
-    
-      
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
-
-    
-  
-
-  
-    
-      <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    
-      <link rel="stylesheet" href="/css/bootstrap-social.css" />
-    
-      <link rel="stylesheet" href="/css/main.css" />
-    
-  
-
-  
-    
-      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-    
-      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-    
-  
-
-  
-
-  
-
-  
-
-    <!-- Facebook OpenGraph tags -->
-  
-
-  
-  <meta property="og:title" content="Tag Index" />
-  
-
-   
-  <meta property="og:description" content="{%- capture site_tags -%} {%- for tag in site.tags -%} {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%} {%- endfor -%} {%- endcapture -%} {%- assign tags_list = site_tags | split:',' | sort -%} {%- for tag in tags_list -%} &amp;nbsp;{{- tag -}}&amp;nbsp;({{site.tags[tag].size}}) {%- endfor -%} {%- for...">
-  
-
-
-  <meta property="og:type" content="website" />
-
-  
-  <meta property="og:url" content="http://localhost:4000/tags/" />
-  <link rel="canonical" href="http://localhost:4000/tags/" />
-  
-
-  
-  <meta property="og:image" content="http://localhost:4000/img/logo.jpeg" />
-  
-
-
-  <!-- Twitter summary cards -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@" />
-  <meta name="twitter:creator" content="@" />
-
-  
-  <meta name="twitter:title" content="Tag Index" />
-  
-
-  
-  <meta name="twitter:description" content="{%- capture site_tags -%} {%- for tag in site.tags -%} {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%} {%- endfor -%} {%- endcapture -%} {%- assign tags_list = site_tags | split:',' | sort -%} {%- for tag in tags_list -%} &amp;nbsp;{{- tag -}}&amp;nbsp;({{site.tags[tag].size}}) {%- endfor -%} {%- for...">
-  
-
-  
-  <meta name="twitter:image" content="http://localhost:4000/img/logo.jpeg" />
-  
-
-  
-
+<head>
+	<meta charset="utf-8">
+	<title>Tags - Himanshu Shekhar</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#311e3e">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#311e3e">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
+<body>
+  <div class="flex-container">
+  <header class="main-header">
+  <div class="wrapper">
+    <div class="header-flex">
+      <div class="menu-icon-container">
+        <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </div>
+      <nav class="main-nav">
+        <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/resources">Resources</a></li>
 
-  <body>
+        </ul>
+      </nav>
+      <p class="logo"><a href="/">Himanshu Shekhar</a></p>
+      <div class="search-icon-container">
+        <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
+      </div>
+    </div>
+  </div>
+</header> <!-- End Header -->
 
+  <div class="content wrapper">
+    
+
+
+<section class="blog-tags">
+  <h1>Tags in Blog</h1>
+  <ul class="tags">
+<!--  cycles through tag list and creates header row of all tags used in site with accompanying per-tag counts...-->
+  
+    
+    <li ><a href="#algorithm" class="tag">algorithm <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#career" class="tag">career <span>(3)</span></a></li>
+  
+    
+    <li ><a href="#cnn" class="tag">cnn <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#coding+interview" class="tag">coding interview <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#crisp-dm" class="tag">crisp-dm <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#data+mining" class="tag">data mining <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#deep+learning" class="tag">deep learning <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#interview+questions" class="tag">interview questions <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#machine+learning" class="tag">machine learning <span>(4)</span></a></li>
+  
+    
+    <li ><a href="#nlp" class="tag">nlp <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#nltk" class="tag">nltk <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#python" class="tag">python <span>(5)</span></a></li>
+  
+    
+    <li ><a href="#quantum" class="tag">quantum <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#start+up" class="tag">start up <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#statistics" class="tag">statistics <span>(1)</span></a></li>
+  
+    
+    <li ><a href="#tech+company" class="tag">tech company <span>(2)</span></a></li>
+  
+    
+    <li ><a href="#tech+interview" class="tag">tech interview <span>(2)</span></a></li>
+  
+    
+    <li ><a href="#visualization" class="tag">visualization <span>(1)</span></a></li>
+  
+  </ul>
+<!--cycles through tag list and creates subheader for each tag name...-->
+  
+    
+  <h2 id="algorithm">algorithm</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/how-to-crack-tech-interview/">How to crack the tech interview</a></span>
+        <small><span>| 28 Jun 2018</span></small>
+    </div>
     
   
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-        <a class="navbar-brand" href="http://localhost:4000">Applied Articles</a>
-      
+    
+  <h2 id="career">career</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/tech-company-differences/">The Differences</a></span>
+        <small><span>| 10 Jul 2018</span></small>
     </div>
-
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
-      
-        
-          <li class="navlinks-container">
-            <a class="navlinks-parent" href="javascript:void(0)">Blog</a>
-            <div class="navlinks-children">
-              
-                
-                  
-
-
-
-
-
-
-<a href="/tags">Tags</a>
-
-                
-              
-                
-                  
-
-
-
-
-
-
-<a href="/resource">Resources</a>
-
-                
-              
-            </div>
-          </li>
-        
-        
-        
-          <li>
-            
-
-
-
-
-
-
-<a href="/projects">Projects</a>
-
-          </li>
-        
-        
-        
-          <li>
-            
-
-
-
-
-
-
-<a href="/aboutme">About Me</a>
-
-          </li>
-        
-        
-      </ul>
+    
+    <div class="tag-list">
+        <span><a href="/how-tech-interview-differ/">How tech interview differ</a></span>
+        <small><span>| 24 May 2018</span></small>
     </div>
+    
+    <div class="tag-list">
+        <span><a href="/is-start-up-right-for-you0/">Is a Start-Up right for You?</a></span>
+        <small><span>| 26 Apr 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="cnn">cnn</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/ways-to-use-convnet/">How to use ConvNets in different ways - a brief analogy</a></span>
+        <small><span>| 04 Oct 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="coding+interview">coding interview</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/how-to-crack-tech-interview/">How to crack the tech interview</a></span>
+        <small><span>| 28 Jun 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="crisp-dm">crisp-dm</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/crisp-dm/">CRoss-Industry Standard Process for Data Mining</a></span>
+        <small><span>| 20 Oct 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="data+mining">data mining</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/crisp-dm/">CRoss-Industry Standard Process for Data Mining</a></span>
+        <small><span>| 20 Oct 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="deep+learning">deep learning</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/ways-to-use-convnet/">How to use ConvNets in different ways - a brief analogy</a></span>
+        <small><span>| 04 Oct 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="interview+questions">interview questions</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/how-to-practice-interview-questions/">How to practice the interview questions</a></span>
+        <small><span>| 27 Jul 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="machine+learning">machine learning</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/demystifying-quantum-machine-learning/">Demystifying Quantum Machine Learning</a></span>
+        <small><span>| 02 May 2019</span></small>
+    </div>
+    
+    <div class="tag-list">
+        <span><a href="/statistics-for-machine-learning/">Statistics & Visualization for Machine Learning</a></span>
+        <small><span>| 09 Sep 2018</span></small>
+    </div>
+    
+    <div class="tag-list">
+        <span><a href="/eda-diabetes-dataset/">Pima Indians onset of Diabetes dataset</a></span>
+        <small><span>| 04 Sep 2018</span></small>
+    </div>
+    
+    <div class="tag-list">
+        <span><a href="/dimentionality-reduction-mnist/">Expounding Dimensionality Reduction using PCA and t-SNE</a></span>
+        <small><span>| 24 Aug 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="nlp">nlp</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/python-tools-list-for-nlp/">Python Tools List for Natural Language Processing</a></span>
+        <small><span>| 16 May 2019</span></small>
+    </div>
+    
+  
+    
+  <h2 id="nltk">nltk</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/python-tools-list-for-nlp/">Python Tools List for Natural Language Processing</a></span>
+        <small><span>| 16 May 2019</span></small>
+    </div>
+    
+  
+    
+  <h2 id="python">python</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/python-tools-list-for-nlp/">Python Tools List for Natural Language Processing</a></span>
+        <small><span>| 16 May 2019</span></small>
+    </div>
+    
+    <div class="tag-list">
+        <span><a href="/ways-to-use-convnet/">How to use ConvNets in different ways - a brief analogy</a></span>
+        <small><span>| 04 Oct 2018</span></small>
+    </div>
+    
+    <div class="tag-list">
+        <span><a href="/statistics-for-machine-learning/">Statistics & Visualization for Machine Learning</a></span>
+        <small><span>| 09 Sep 2018</span></small>
+    </div>
+    
+    <div class="tag-list">
+        <span><a href="/eda-diabetes-dataset/">Pima Indians onset of Diabetes dataset</a></span>
+        <small><span>| 04 Sep 2018</span></small>
+    </div>
+    
+    <div class="tag-list">
+        <span><a href="/dimentionality-reduction-mnist/">Expounding Dimensionality Reduction using PCA and t-SNE</a></span>
+        <small><span>| 24 Aug 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="quantum">quantum</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/demystifying-quantum-machine-learning/">Demystifying Quantum Machine Learning</a></span>
+        <small><span>| 02 May 2019</span></small>
+    </div>
+    
+  
+    
+  <h2 id="start+up">start up</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/is-start-up-right-for-you0/">Is a Start-Up right for You?</a></span>
+        <small><span>| 26 Apr 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="statistics">statistics</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/statistics-for-machine-learning/">Statistics & Visualization for Machine Learning</a></span>
+        <small><span>| 09 Sep 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="tech+company">tech company</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/tech-company-differences/">The Differences</a></span>
+        <small><span>| 10 Jul 2018</span></small>
+    </div>
+    
+    <div class="tag-list">
+        <span><a href="/is-start-up-right-for-you0/">Is a Start-Up right for You?</a></span>
+        <small><span>| 26 Apr 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="tech+interview">tech interview</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/how-to-crack-tech-interview/">How to crack the tech interview</a></span>
+        <small><span>| 28 Jun 2018</span></small>
+    </div>
+    
+    <div class="tag-list">
+        <span><a href="/how-tech-interview-differ/">How tech interview differ</a></span>
+        <small><span>| 24 May 2018</span></small>
+    </div>
+    
+  
+    
+  <h2 id="visualization">visualization</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/statistics-for-machine-learning/">Statistics & Visualization for Machine Learning</a></span>
+        <small><span>| 09 Sep 2018</span></small>
+    </div>
+    
+  
+</section>
 
-	
-	<div class="avatar-container">
-	  <div class="avatar-img-border">
-	    <a href="http://localhost:4000 ">
-	      <img class="avatar-img" src="/img/logo.jpeg" />
-		</a>
-	  </div>
-	</div>
-	
-
-  </div>
-</nav>
-
-
-    <!-- TODO this file has become a mess, refactor it -->
-
-
-
-
-
-<header class="header-section ">
-
-<div class="intro-header no-img">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-heading">
-          <h1>Tag Index</h1>
-		  
-		  
-		  
+  <div class="search-box">
+  <div class="wrapper">
+    <div class="search-grid">
+      <form class="search-form">
+        <div id="search-container">
+          <input type="text" id="search-input" class="search" placeholder="Search">
         </div>
+      </form>
+      <ul id="results-container" class="results-search"></ul>
+      <div class="icon-close-container">
+        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
       </div>
     </div>
   </div>
 </div>
-</header>
 
-
-
-
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <a href="#algorithm" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;algorithm&nbsp;(1)</a><a href="#career" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;career&nbsp;(3)</a><a href="#cnn" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;cnn&nbsp;(1)</a><a href="#coding interview" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;coding interview&nbsp;(1)</a><a href="#crisp-dm" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;crisp-dm&nbsp;(1)</a><a href="#data mining" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;data mining&nbsp;(1)</a><a href="#deep learning" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;deep learning&nbsp;(1)</a><a href="#interview questions" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;interview questions&nbsp;(1)</a><a href="#machine learning" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;machine learning&nbsp;(3)</a><a href="#python" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;python&nbsp;(4)</a><a href="#start up" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;start up&nbsp;(1)</a><a href="#statistics" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;statistics&nbsp;(1)</a><a href="#tech company" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;tech company&nbsp;(2)</a><a href="#tech interview" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;tech interview&nbsp;(2)</a><a href="#visualization" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;visualization&nbsp;(1)</a><div id="full-tags-list"><h2 id="algorithm" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;algorithm&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-06-28-how-to-crack-tech-interview/">How to crack the tech interview</a>
-                <div class="entry-date">
-                    <time datetime="2018-06-28T00:00:00+05:30">June 28, 2018</time>
-                </div>
-            </div></div><h2 id="career" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;career&nbsp;(3)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-07-10-tech-company-differences/">The Differences</a>
-                <div class="entry-date">
-                    <time datetime="2018-07-10T00:00:00+05:30">July 10, 2018</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="http://localhost:4000/2018-05-24-how-tech-interview-differ/">How tech interview differ</a>
-                <div class="entry-date">
-                    <time datetime="2018-05-24T00:00:00+05:30">May 24, 2018</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="http://localhost:4000/2018-04-26-is-start-up-right-for-you/">Is a Start-Up right for You?</a>
-                <div class="entry-date">
-                    <time datetime="2018-04-26T00:00:00+05:30">April 26, 2018</time>
-                </div>
-            </div></div><h2 id="cnn" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;cnn&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-10-04-ways-to-use-convnet/">How to use ConvNets in different ways</a>
-                <div class="entry-date">
-                    <time datetime="2018-10-04T00:00:00+05:30">October 04, 2018</time>
-                </div>
-            </div></div><h2 id="coding interview" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;coding interview&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-06-28-how-to-crack-tech-interview/">How to crack the tech interview</a>
-                <div class="entry-date">
-                    <time datetime="2018-06-28T00:00:00+05:30">June 28, 2018</time>
-                </div>
-            </div></div><h2 id="crisp-dm" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;crisp-dm&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-10-20-crisp-dm/">CRoss-Industry Standard Process for Data Mining</a>
-                <div class="entry-date">
-                    <time datetime="2018-10-20T00:00:00+05:30">October 20, 2018</time>
-                </div>
-            </div></div><h2 id="data mining" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;data mining&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-10-20-crisp-dm/">CRoss-Industry Standard Process for Data Mining</a>
-                <div class="entry-date">
-                    <time datetime="2018-10-20T00:00:00+05:30">October 20, 2018</time>
-                </div>
-            </div></div><h2 id="deep learning" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;deep learning&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-10-04-ways-to-use-convnet/">How to use ConvNets in different ways</a>
-                <div class="entry-date">
-                    <time datetime="2018-10-04T00:00:00+05:30">October 04, 2018</time>
-                </div>
-            </div></div><h2 id="interview questions" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;interview questions&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-07-27-how-to-practice-interview-questions/">How to practice the interview questions</a>
-                <div class="entry-date">
-                    <time datetime="2018-07-27T00:00:00+05:30">July 27, 2018</time>
-                </div>
-            </div></div><h2 id="machine learning" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;machine learning&nbsp;(3)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-09-09-statistics-for-machine-learning/">Statistics & Visualization for Machine Learning</a>
-                <div class="entry-date">
-                    <time datetime="2018-09-09T00:00:00+05:30">September 09, 2018</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="http://localhost:4000/2018-09-04-eda-diabetes-dataset/">Pima Indians onset of Diabetes dataset</a>
-                <div class="entry-date">
-                    <time datetime="2018-09-04T00:00:00+05:30">September 04, 2018</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="http://localhost:4000/2018-08-24-dimentionality-reduction-mnist/">Dimentionality Reduction using MNIST data set</a>
-                <div class="entry-date">
-                    <time datetime="2018-08-24T00:00:00+05:30">August 24, 2018</time>
-                </div>
-            </div></div><h2 id="python" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;python&nbsp;(4)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-10-04-ways-to-use-convnet/">How to use ConvNets in different ways</a>
-                <div class="entry-date">
-                    <time datetime="2018-10-04T00:00:00+05:30">October 04, 2018</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="http://localhost:4000/2018-09-09-statistics-for-machine-learning/">Statistics & Visualization for Machine Learning</a>
-                <div class="entry-date">
-                    <time datetime="2018-09-09T00:00:00+05:30">September 09, 2018</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="http://localhost:4000/2018-09-04-eda-diabetes-dataset/">Pima Indians onset of Diabetes dataset</a>
-                <div class="entry-date">
-                    <time datetime="2018-09-04T00:00:00+05:30">September 04, 2018</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="http://localhost:4000/2018-08-24-dimentionality-reduction-mnist/">Dimentionality Reduction using MNIST data set</a>
-                <div class="entry-date">
-                    <time datetime="2018-08-24T00:00:00+05:30">August 24, 2018</time>
-                </div>
-            </div></div><h2 id="start up" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;start up&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-04-26-is-start-up-right-for-you/">Is a Start-Up right for You?</a>
-                <div class="entry-date">
-                    <time datetime="2018-04-26T00:00:00+05:30">April 26, 2018</time>
-                </div>
-            </div></div><h2 id="statistics" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;statistics&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-09-09-statistics-for-machine-learning/">Statistics & Visualization for Machine Learning</a>
-                <div class="entry-date">
-                    <time datetime="2018-09-09T00:00:00+05:30">September 09, 2018</time>
-                </div>
-            </div></div><h2 id="tech company" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;tech company&nbsp;(2)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-07-10-tech-company-differences/">The Differences</a>
-                <div class="entry-date">
-                    <time datetime="2018-07-10T00:00:00+05:30">July 10, 2018</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="http://localhost:4000/2018-04-26-is-start-up-right-for-you/">Is a Start-Up right for You?</a>
-                <div class="entry-date">
-                    <time datetime="2018-04-26T00:00:00+05:30">April 26, 2018</time>
-                </div>
-            </div></div><h2 id="tech interview" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;tech interview&nbsp;(2)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-06-28-how-to-crack-tech-interview/">How to crack the tech interview</a>
-                <div class="entry-date">
-                    <time datetime="2018-06-28T00:00:00+05:30">June 28, 2018</time>
-                </div>
-            </div><div class="tag-entry">
-                <a href="http://localhost:4000/2018-05-24-how-tech-interview-differ/">How tech interview differ</a>
-                <div class="entry-date">
-                    <time datetime="2018-05-24T00:00:00+05:30">May 24, 2018</time>
-                </div>
-            </div></div><h2 id="visualization" class="linked-section">
-        <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;visualization&nbsp;(1)
-    </h2>
-    <div class="post-list"><div class="tag-entry">
-                <a href="http://localhost:4000/2018-09-09-statistics-for-machine-learning/">Statistics & Visualization for Machine Learning</a>
-                <div class="entry-date">
-                    <time datetime="2018-09-09T00:00:00+05:30">September 09, 2018</time>
-                </div>
-            </div></div></div>
-
-	    
-    </div>
-  </div>
+  <div class="pagination clearfix">
+  
+  
 </div>
 
-
-    <footer>
-  <div class="container beautiful-jekyll-footer">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links"><li><a href="/feed.xml" title="RSS"><span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">RSS</span>
-              </a>
-            </li><li><a href="https://www.facebook.com/hshekhar0" title="Facebook"><span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">Facebook</span>
-              </a>
-            </li><li><a href="https://linkedin.com/in/hshekhar20" title="LinkedIn"><span class="fa-stack fa-lg" aria-hidden="true">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-                <span class="sr-only">LinkedIn</span>
-              </a>
-            </li></ul>
-      <p class="copyright text-muted">
-      Applied Articles
-      &nbsp;&bull;&nbsp;
-      2018
-
-      
-
-      
-      </p>
-          <!-- Please don't remove this, keep my open source work credited :) 
-    <p class="theme-by text-muted">
-      Theme by
-      <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
-    </p> 
-    <p class="theme-by text-muted">Code with <span style="font-size:120%;color:red;">&hearts;</span> in India</p>-->
-      </div>
-    </div>
+  </div> <!-- End Wrapper -->
+  <footer class="main-footer">
+  <div class="copyright">
+    <p>2019 &copy; Himanshu Shekhar</p>
   </div>
-</footer>
+</footer> <!-- End Footer -->
 
-  
-    
+</div>
 
+  <!-- JS -->
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/jekyll-search.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+</script>
+<script src="/assets/js/main.js"></script>
 
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
 
-
-
-
-  
-    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
-    
-      <script>
-      	if (typeof jQuery == 'undefined') {
-      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
-      	}
-      </script>
-    
-  
-    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
-    
-	<script src="/js/bootstrap.min.js"></script>
-    
-  
-    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
-    
-	<script src="/js/main.js"></script>
-    
-  
-
-
-
-	<!-- Google Analytics -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-127947870-1', 'auto');
-		ga('send', 'pageview');
-	</script>
-	<!-- End Google Analytics -->
-
-
-  
-  </body>
+</body>
 </html>
