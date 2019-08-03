@@ -80,11 +80,11 @@ System shall provide email notifications and windows notifications for the targe
 ### DESIGN DESCRIPTION:
 > *General Flowchart of STPM*
 
-![flowchart](https://github.com/h-shekhar/Sales-Target-Performance-Management/blob/master/Images/design.png)
+![flowchart](/assets/img//design.png){:class="img-responsive"}
 
 > *Process Flow for STPM*
 
-![image1](https://github.com/h-shekhar/Sales-Target-Performance-Management/blob/master/Images/Capture.JPG)
+![image1](/assets/img/Capture.JPG){:class="img-responsive"}
 
 ### DATABASE TABLES:
 
@@ -124,35 +124,35 @@ Target_id, Givenby_area_id, Year, Target, Product_id, Givento_area_id, Givenby_e
 ### SCREENSHOTS:
 > *Fig 1: HomePage*
 
-![a](https://github.com/h-shekhar/Sales-Target-Performance-Management/blob/master/Images/a.jpg)
+![a](/assets/img/a.jpg){:class="img-responsive"}
 
 > *Fig 2: Dashboard*
 
-![e](https://github.com/h-shekhar/Sales-Target-Performance-Management/blob/master/Images/e.jpg)
+![e](/assets/img/e.jpg){:class="img-responsive"}
 
 > *Fig 3: New Registration*
 
-![b](https://github.com/h-shekhar/Sales-Target-Performance-Management/blob/master/Images/b.jpg)
+![b](/assets/img/b.jpg){:class="img-responsive"}
 
 > *Fig 4: Set Targets*
 
-![c](https://github.com/h-shekhar/Sales-Target-Performance-Management/blob/master/Images/c.jpg)
+![c](/assets/img/c.jpg){:class="img-responsive"}
 
 > *Fig 5: Approve Target List*
 
-![d](https://github.com/h-shekhar/Sales-Target-Performance-Management/blob/master/Images/d.jpg)
+![d](/assets/img/d.jpg){:class="img-responsive"}
 
 > *Fig 6: View Achievements*
 
-![f](https://github.com/h-shekhar/Sales-Target-Performance-Management/blob/master/Images/f.jpg)
+![f](/assets/img/f.jpg){:class="img-responsive"}
 
 > *Fig 7: Admin Panel (User List)*
 
-![h](https://github.com/h-shekhar/Sales-Target-Performance-Management/blob/master/Images/h.jpg)
+![h](/assets/img/h.jpg){:class="img-responsive"}
 
 > *Fig 8: Mailbox*
 
-![g](https://github.com/h-shekhar/Sales-Target-Performance-Management/blob/master/Images/g.jpg)
+![g](/assets/img/g.jpg){:class="img-responsive"}
 
   
 *Complete code can be found* [here](https://github.com/h-shekhar/Sales-Target-Performance-Management)
