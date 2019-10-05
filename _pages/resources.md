@@ -10,13 +10,17 @@ permalink: /resources/
 - [Machine Learning Problem](https://www.toptal.com/machine-learning/machine-learning-problems)
 - [Stanford NLP cs224n](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1174/index.html)
 - [Stanford CNN cs231n](http://cs231n.stanford.edu/)
+- [MIT OCW](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/)
 - [Vanishing Gradient Problem](https://ayearofai.com/rohan-4-the-vanishing-gradient-problem-ec68f76ffb9b)
 - [Google Magenta tensorflow](https://magenta.tensorflow.org/)
 - [Computer Vision](https://blog.playment.io/training-data-for-computer-vision/)
+- [Talk To Transformer](https://talktotransformer.com/)
 
 ----
 
 ## **Blogs**
+- [Open AI](https://openai.com/)
+- [Fast AI](https://www.fast.ai/)
 - [The Keras Blog](https://blog.keras.io/)
 - [Andrej Karpathy](http://karpathy.github.io/)
 - [Christopher Olah Blog](http://colah.github.io/)

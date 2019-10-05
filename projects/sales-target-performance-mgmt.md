@@ -10,7 +10,9 @@ img: sales.jpg
 
 This project aims at developing a highly cost-effective generic product which would cater to the needs of the banking sector. There is a need to have a less cost and unique application to set sales target and track performance across industry groups. Sales Target & Performance Management software will enable the organization’s senior management to set sales target at the highest level & cascade it down to the zones, clusters & branches. The actual performance will be entered by sales agents on the ground. Performance review reports/dashboards can be rolled up at various levels. It can easily be customized as per requirements and available products to suit the needs of different sector.
 
-### SCOPE:
+---
+
+## SCOPE:
 STPM is a web based system which was deliberated to develop as a solution for transparent and effective management of sales performance. Therefore this system acts as a supporter for executives who are re-assigning sales target based on sales progress. Under this sub topic we describe what features are in the scope of the system to be developed.
 
 ### In scope
@@ -24,7 +26,9 @@ STPM is a web based system which was deliberated to develop as a solution for tr
 - Report sales performance to the next higher level – faster & with efficiency.
 - Intangible - Increase in product revenue & productivity.
 
-### FUNCTIONS:
+---
+
+## FUNCTIONS:
 
 - Deals with the basic problem of managing enormous data.
 - It caters to the organization of data in a well structured form facilitating its maintenance and expansion.
@@ -39,7 +43,9 @@ STPM is a web based system which was deliberated to develop as a solution for tr
 - Agents view to update on planned & actual against set targets.
 - Roll-up of performance reports at various levels with all possible data filtration requirements.
 
-### PROPOSED SYSTEM:
+---
+
+## PROPOSED SYSTEM:
 Proposed system is an automated Sales Management System. Functionalities describe which services that we intended provide for the administrators and details about the functions which perform by our system STPM. Our proposed system has the following advantages.
 
 ### Provide facility for Creating an account
@@ -77,7 +83,9 @@ System will provide various kinds of reports to the end user such as Graphical r
 ### Provide alert notifications
 System shall provide email notifications and windows notifications for the target submitted and achieved which happen in recent future. The user can customize this option in such a way that he only gets notification as he wishes, because the user can decide which assets he needs notifications on, and which notifications or notification combination (such as windows notification and/or email notification) he needs to the particular asset. All the manual difficulties in managing the assets procedure have been rectified by implementing computerization.
 
-### DESIGN DESCRIPTION:
+---
+
+## DESIGN DESCRIPTION:
 > *General Flowchart of STPM*
 
 ![flowchart](/assets/img//design.png){:class="img-responsive"}
@@ -86,7 +94,9 @@ System shall provide email notifications and windows notifications for the targe
 
 ![image1](/assets/img/Capture.JPG){:class="img-responsive"}
 
-### DATABASE TABLES:
+---
+
+## DATABASE TABLES:
 
 **TABLE 1- AGENT TARGET LIST**  
 At_id, Target_id, Month_id, Product_id, Amt_qty, Emp_id, Approval_status
@@ -121,7 +131,9 @@ Role_id, Role_name
 **TABLE 11- TARGETS:**  
 Target_id, Givenby_area_id, Year, Target, Product_id, Givento_area_id, Givenby_emp_id, Givento_emp_id
 
-### SCREENSHOTS:
+---
+
+## SCREENSHOTS:
 > *Fig 1: HomePage*
 
 ![a](/assets/img/a.jpg){:class="img-responsive"}
@@ -138,24 +150,36 @@ Target_id, Givenby_area_id, Year, Target, Product_id, Givento_area_id, Givenby_e
 
 ![c](/assets/img/c.jpg){:class="img-responsive"}
 
-> *Fig 5: Approve Target List*
+> *Fig 5: Given Targets*
+
+![c](/assets/img/given_targets.png){:class="img-responsive"}
+
+> *Fig 6: Submit Targets*
+
+![c](/assets/img/submit_target.png){:class="img-responsive"}
+
+> *Fig 7: Achievements*
+
+![c](/assets/img/achievements.png){:class="img-responsive"}
+
+> *Fig 8: Approve Target List*
 
 ![d](/assets/img/d.jpg){:class="img-responsive"}
 
-> *Fig 6: View Achievements*
+> *Fig 9: View Achievements*
 
 ![f](/assets/img/f.jpg){:class="img-responsive"}
 
-> *Fig 7: Admin Panel (User List)*
+> *Fig 10: Admin Panel (User List)*
 
 ![h](/assets/img/h.jpg){:class="img-responsive"}
 
-> *Fig 8: Mailbox*
+> *Fig 11: Mailbox*
 
 ![g](/assets/img/g.jpg){:class="img-responsive"}
 
   
-*Complete code can be found* [here](https://github.com/h-shekhar/Sales-Target-Performance-Management)
+*Complete code can be found* [here](https://github.com/h-shekhar/Sales-Target-Performance-Management-STPM-)
 
   
 > _In case if you found something useful to add to this article or you found a bug in the code or would like to improve some points mentioned, feel free to write it down in the comments. Hope you found something useful here._
