@@ -16,7 +16,7 @@ permalink: /about/
         <b><i>"Life is unpredictable. You will never know as to which road can leads you to which destination." ~ Unknown</i></b>
         <br><br>
 
-        I live in New Delhi, India, where I'm an MTech candidate studying Software Engineering at Delhi Technological University. In a past life, I worked as a Consultant reviewing, analyzing, evaluating business processes, business systems, and user needs to achieve process and change improvements that enhanced operational efficiencies. I completed my Bachelor's Degree with a major in Computer Science. My technical areas of interest include <i>Predictive Analytics, Visualization, Machine Learning, Deep Learning, Natural Language Processing, Computer Vision, Software Development, Business Process Reengineering.</i> In this personal blog, you will find collection of my thoughts, notes, codes and resources based on my experience in technology.
+        I live in New Delhi, India, where I'm an MTech candidate studying Software Engineering at Delhi Technological University. In a past life, I worked as a Consultant reviewing, analyzing, evaluating business processes, business systems, and user needs to achieve process and change improvements that enhanced operational efficiencies. I completed my Bachelor's Degree with a major in Computer Science. My technical areas of interest include <i>Predictive Analytics, Visualization, Machine Learning, Deep Learning, Natural Language Processing, Software Development, Business Process Reengineering.</i> In this personal blog, you will find collection of my thoughts, notes, codes and resources based on my experience in technology.
 
       </p>
     </section>
@@ -47,10 +47,28 @@ permalink: /about/
         <li class="facebook"><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
       {% endif %}
 
+      {% if site.twitter %}
+        <li class="twitter"><a href="https://twitter.com/{{site.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      {% else %}
+        <li class="twitter"><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      {% endif %}
+
+      {% if site.instagram %}
+        <li class="instagram"><a href="https://instagram.com/{{site.instagram}}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+      {% else %}
+        <li class="instagram"><a href="https://instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+      {% endif %}
+
       {% if site.medium %}
         <li class="medium"><a href="http://medium.com/{{site.medium}}" target="_blank"><i class="fa fa-medium"></i></a></li>
       {% else %}
         <li class="medium"><a href="http://medium.com/" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a></li>
+      {% endif %}
+
+      {% if site.github %}
+        <li class="github"><a href="http://github.com/{{site.github}}" target="_blank"><i class="fa fa-github"></i></a></li>
+      {% else %}
+        <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
       {% endif %}
 
       </ul>
